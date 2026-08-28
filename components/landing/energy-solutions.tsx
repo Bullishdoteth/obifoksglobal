@@ -25,7 +25,7 @@ const solutions: SolutionItem[] = [
     description:
       "Engineered for 24/7 home power security. Protect your household from utility grid outages with zero-downtime solar inverters and long-lasting LiFePO4 batteries.",
     features: ["Rooftop Solar Arrays", "Lithium Battery Storage", "Automatic Grid Switching"],
-    image: "/assets/solutions/residential.png",
+    image: "/assets/solutions/residential.jpg",
     href: "#contact",
   },
   {
@@ -58,7 +58,7 @@ const solutions: SolutionItem[] = [
     description:
       "All-in-one solar street lighting, smart CCTV energy nodes, high-efficiency MPPT controllers, surge protectors, and certified installation hardware.",
     features: ["Standalone Solar Streetlights", "MPPT Charge Controllers", "Protection & Circuit Accessories"],
-    image: "/assets/solutions/security.png",
+    image: "/assets/solutions/security-cctv.png",
     href: "#contact",
   },
 ];
@@ -69,13 +69,13 @@ export default function EnergySolutions() {
   const current = solutions[activeSolution];
 
   return (
-    <section id="solutions" className="relative py-20 sm:py-28 bg-black text-white overflow-hidden border-t border-zinc-900">
+    <section id="solutions" className="relative py-20 sm:py-28 lg:py-32 bg-black text-white overflow-hidden border-t border-zinc-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-zinc-800/80">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-zinc-900 border border-zinc-800 text-white text-xs font-semibold uppercase tracking-widest mb-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8 pb-12 sm:pb-16 border-b border-zinc-800/80">
+          <div className="max-w-2xl space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-zinc-900 border border-zinc-800 text-white text-xs font-semibold uppercase tracking-widest">
               <Zap className="w-3.5 h-3.5" />
               ENERGY SOLUTIONS
             </div>
@@ -84,12 +84,12 @@ export default function EnergySolutions() {
             </h2>
           </div>
 
-          <div className="max-w-md">
-            <p className="text-zinc-400 text-base sm:text-lg leading-relaxed mb-4">
+          <div className="max-w-md space-y-4">
+            <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
               From residential backup power to industrial energy infrastructure, we provide solutions designed to keep you powered.
             </p>
             {/* Quick Stats Pill */}
-            <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-zinc-400 pt-2">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-zinc-400 pt-1">
               <span className="flex items-center gap-1.5 text-zinc-300">
                 <span className="text-[#EE7130] font-bold">70+</span> Projects
               </span>
@@ -106,7 +106,7 @@ export default function EnergySolutions() {
         </div>
 
         {/* Editorial 2-Column Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch pt-10 sm:pt-14">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch pt-12 sm:pt-16">
           
           {/* Left Column: Interactive Horizontal Rows */}
           <div className="lg:col-span-6 flex flex-col justify-between">
@@ -118,13 +118,13 @@ export default function EnergySolutions() {
                     key={item.id}
                     onMouseEnter={() => setActiveSolution(index)}
                     onClick={() => setActiveSolution(index)}
-                    className={`group cursor-pointer py-6 transition-all duration-300 relative border-l-2 pl-5 sm:pl-6 ${
+                    className={`group cursor-pointer py-6 sm:py-7 transition-all duration-300 relative border-l-2 pl-6 sm:pl-8 ${
                       isActive
                         ? "border-[#EE7130] bg-zinc-900/40"
                         : "border-transparent hover:border-zinc-700 hover:bg-zinc-900/20"
                     }`}
                   >
-                    <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center justify-between gap-4 sm:gap-6">
                       <div className="flex items-baseline gap-4 sm:gap-6">
                         <span
                           className={`font-mono text-sm sm:text-base font-semibold transition-colors duration-300 ${
@@ -141,7 +141,7 @@ export default function EnergySolutions() {
                           >
                             {item.title}
                           </h3>
-                          <p className="text-xs sm:text-sm text-zinc-400 mt-1 font-medium">
+                          <p className="text-xs sm:text-sm text-zinc-400 mt-1.5 font-medium">
                             {item.tagline}
                           </p>
                         </div>
@@ -161,7 +161,7 @@ export default function EnergySolutions() {
 
                     {/* Mobile inline preview description */}
                     {isActive && (
-                      <div className="lg:hidden mt-4 pt-3 border-t border-zinc-800/40 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                      <div className="lg:hidden mt-5 pt-4 border-t border-zinc-800/40 text-xs sm:text-sm text-zinc-400 leading-relaxed">
                         {item.description}
                       </div>
                     )}
@@ -171,7 +171,7 @@ export default function EnergySolutions() {
             </div>
 
             {/* Editorial Footer Quote / CTA Note */}
-            <div className="mt-8 pt-6 border-t border-zinc-900 hidden sm:flex items-center justify-between text-xs text-zinc-500">
+            <div className="mt-10 sm:mt-14 pt-6 border-t border-zinc-900 hidden sm:flex items-center justify-between text-xs text-zinc-500">
               <span>Hover or click any solution category to inspect details</span>
               <Link
                 href="#contact"
@@ -184,7 +184,7 @@ export default function EnergySolutions() {
 
           {/* Right Column: Editorial Image & Details Stage (Desktop/Tablet) */}
           <div className="lg:col-span-6 relative flex flex-col">
-            <div className="relative w-full h-[400px] sm:h-[480px] lg:h-full min-h-[420px] overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl group">
+            <div className="relative w-full h-[420px] sm:h-[500px] lg:h-full min-h-[440px] overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl group">
               
               {/* Dynamic Image with Smooth Transition */}
               <Image
@@ -201,27 +201,27 @@ export default function EnergySolutions() {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
               {/* Top Pill Overlay */}
-              <div className="absolute top-5 left-5 z-20">
-                <span className="px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-white text-xs font-mono tracking-wider">
+              <div className="absolute top-6 left-6 z-20">
+                <span className="px-3.5 py-2 rounded-full bg-black/70 backdrop-blur-md border border-white/10 text-white text-xs font-mono tracking-wider">
                   {current.number} // {current.title}
                 </span>
               </div>
 
               {/* Bottom Content Card Inside Stage */}
-              <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8 z-20 bg-gradient-to-t from-black/95 via-black/80 to-transparent">
-                <h4 className="text-2xl font-bold text-white mb-2">
+              <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8 lg:p-10 z-20 bg-gradient-to-t from-black/95 via-black/80 to-transparent space-y-4">
+                <h4 className="text-2xl sm:text-3xl font-bold text-white">
                   {current.title}
                 </h4>
-                <p className="text-zinc-300 text-sm leading-relaxed mb-5 max-w-lg">
+                <p className="text-zinc-300 text-sm sm:text-base leading-relaxed max-w-lg">
                   {current.description}
                 </p>
 
                 {/* Feature Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2.5 pt-1">
                   {current.features.map((feat, i) => (
                     <span
                       key={i}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-xs font-medium"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-xs font-medium"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 text-white" />
                       {feat}
@@ -230,13 +230,15 @@ export default function EnergySolutions() {
                 </div>
 
                 {/* Action Link */}
-                <Link
-                  href={current.href}
-                  className="inline-flex items-center gap-2  bg-[#378222] hover:bg-[#2b661a] text-white font-semibold text-sm px-6 py-2.5 transition-all duration-200 hover:scale-[1.02] active:scale-95"
-                >
-                  Consult an Engineer
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
+                <div className="pt-2">
+                  <Link
+                    href={current.href}
+                    className="inline-flex items-center gap-2 bg-[#378222] hover:bg-[#2b661a] text-white font-semibold text-sm px-6 py-3 transition-all duration-200 hover:scale-[1.02] active:scale-95 shadow-lg"
+                  >
+                    Consult an Engineer
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
 
             </div>

@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Obifoks Global & Felicity Nig. Ltd",
-  description: "Shop reliable solar panels, lithium batteries, inverters, CCTV, street lights and energy accessories from Obifoks Global in Owerri, Imo State. Professional service and affordable energy solutions.",
+  description: "Shop reliable solar panels, lithium batteries, inverters, CCTV, street lights and energy accessories from Obifoks Global in Owerri, Imo State.",
   icons: {
     icon: "/favicon.ico",
   },

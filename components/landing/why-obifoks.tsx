@@ -44,17 +44,16 @@ const features: FeatureRow[] = [
 
 export default function WhyObifoks() {
   return (
-    <section id="why-obifoks" className="py-20 sm:py-28 bg-white text-zinc-900 relative overflow-hidden">
+    <section id="why-obifoks" className="py-20 sm:py-28 lg:py-32 bg-white text-zinc-900 relative overflow-hidden border-b border-zinc-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header Badge & Main Statement */}
-        <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black border border-[#EE7130]/30 text-white text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6">
-            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
-            Why Obifoks
+        <div className="max-w-4xl space-y-4 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white text-xs sm:text-sm font-semibold tracking-wider uppercase">
+            <span>Why Obifoks</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-zinc-950 tracking-tight leading-[1.1] mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-zinc-950 tracking-tight leading-[1.1]">
             MORE THAN A SOLAR DEALER
           </h2>
 
@@ -65,43 +64,40 @@ export default function WhyObifoks() {
         </div>
 
         {/* Divider Line */}
-        <div className="w-full h-px bg-zinc-200 my-10 sm:my-14" />
+        <div className="w-full h-px bg-zinc-200/80 my-12 sm:my-16" />
 
         {/* Large Numbered Rows */}
-        <div className="flex flex-col divide-y divide-zinc-200 border-y border-zinc-200">
+        <div className="flex flex-col divide-y divide-zinc-200/80 border-y border-zinc-200/80">
           {features.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.number}
-                className="group py-8 sm:py-10 px-2 sm:px-6 transition-all duration-300 hover:bg-zinc-50/80 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-8"
+                className="py-8 sm:py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 sm:gap-10"
               >
                 {/* Left side: Number + Title */}
-                <div className="flex items-start sm:items-center gap-6 sm:gap-8 min-w-[320px]">
-                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#EE7130] shrink-0 tracking-tight">
+                <div className="flex items-start sm:items-center gap-6 sm:gap-8 min-w-[300px]">
+                  <span className="font-mono text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-400 shrink-0 tracking-tight">
                     {item.number}
                   </span>
-                  <div>
-                    <div className="flex items-center gap-2.5 mb-1.5">
-                      <Icon className="w-5 h-5 text-[#EE7130] opacity-80 group-hover:opacity-100 transition-opacity" />
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-950 group-hover:text-[#EE7130] transition-colors">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2.5">
+                      <Icon className="w-5 h-5 text-zinc-700 shrink-0" />
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-zinc-950">
                         {item.title}
                       </h3>
                     </div>
-                    <span className="inline-block text-xs font-semibold text-zinc-700 bg-zinc-100 group-hover:bg-zinc-200/80 px-2.5 py-1 rounded-md border border-zinc-200 transition-colors">
+                    <span className="inline-block text-xs font-semibold text-zinc-600 bg-zinc-100 px-3 py-1 rounded-md border border-zinc-200">
                       {item.highlight}
                     </span>
                   </div>
                 </div>
 
-                {/* Right side: Description + Arrow Indicator */}
-                <div className="flex items-center justify-between md:justify-end gap-6 md:w-1/2">
+                {/* Right side: Description */}
+                <div className="md:w-1/2">
                   <p className="text-zinc-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl">
                     {item.description}
                   </p>
-                  <div className="hidden lg:flex w-10 h-10 rounded-full border border-zinc-200 group-hover:border-[#EE7130] items-center justify-center shrink-0 transition-colors group-hover:bg-[#EE7130]/10">
-                    <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-[#EE7130] transition-transform group-hover:translate-x-0.5" />
-                  </div>
                 </div>
               </div>
             );
@@ -109,16 +105,14 @@ export default function WhyObifoks() {
         </div>
 
         {/* Bottom Callout banner */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-zinc-900 text-white border border-zinc-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div>
-              <h4 className="text-white font-bold text-base sm:text-lg">Need help sizing your power system?</h4>
-              <p className="text-zinc-400 text-xs sm:text-sm">Speak with an Obifoks solar engineer for a free energy assessment.</p>
-            </div>
+        <div className="mt-14 sm:mt-20 p-8 sm:p-10 bg-zinc-950 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="space-y-1">
+            <h4 className="text-white font-bold text-base sm:text-xl">Need help sizing your power system?</h4>
+            <p className="text-zinc-400 text-xs sm:text-sm">Speak with an Obifoks solar engineer for a free energy assessment.</p>
           </div>
           <Link
             href="#contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 hover:bg-[#2b661a] bg-[#378222] text-white font-semibold text-sm px-6 py-3 transition-all duration-200 shrink-0"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 hover:bg-[#2b661a] bg-[#378222] text-white font-semibold text-sm px-6 py-3.5 transition-all duration-200 shrink-0 shadow-md"
           >
             <span>Consult an Engineer</span>
             <ArrowRight className="w-4 h-4" />
