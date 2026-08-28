@@ -69,11 +69,7 @@ export default function EnergySolutions() {
   const current = solutions[activeSolution];
 
   return (
-    <section id="solutions" className="relative py-20 sm:py-28 bg-zinc-950 text-white overflow-hidden border-t border-zinc-900">
-      {/* Subtle Background Glow */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#EE7130]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-[#EE7130]/5 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="solutions" className="relative py-20 sm:py-28 bg-black text-white overflow-hidden border-t border-zinc-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
@@ -201,7 +197,7 @@ export default function EnergySolutions() {
               />
 
               {/* Dark Gradient Overlay for Readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
               {/* Top Pill Overlay */}
               <div className="absolute top-5 left-5 z-20">

@@ -112,10 +112,7 @@ export default function Projects() {
   const secondaryProjects = projectsData.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-20 sm:py-28 bg-zinc-900/60 text-white relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#EE7130]/10 rounded-full blur-3xl pointer-events-none" />
-
+    <section id="projects" className="py-20 sm:py-28 bg-black text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
@@ -145,7 +142,7 @@ export default function Projects() {
                 priority
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-zinc-950 opacity-80" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-black opacity-80" />
               
               {/* Badge overlay */}
               <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
