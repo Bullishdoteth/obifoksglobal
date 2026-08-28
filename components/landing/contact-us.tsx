@@ -11,7 +11,6 @@ import {
   Send, 
   CheckCircle2, 
   Zap, 
-  Sparkles,
   ExternalLink
 } from "lucide-react";
 
@@ -20,20 +19,10 @@ export default function ContactUs() {
     name: "",
     phone: "",
     requirement: "",
-    category: "Solar Inverter System",
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const categories = [
-    "Solar Inverter System",
-    "Lithium & Tubular Batteries",
-    "Solar Panels & Mounting",
-    "Commercial / Industrial Power",
-    "Security & CCTV Installation",
-    "Maintenance & Upgrade",
-  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,7 +35,7 @@ export default function ContactUs() {
       setLoading(false);
       setSubmitted(true);
 
-      const message = `Hello Obifoks Global! I would like to request a quote.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Category:* ${formData.category}\n*Requirement:* ${formData.requirement || "Not specified"}`;
+      const message = `Hello Obifoks Global! I would like to request a quote.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Requirement:* ${formData.requirement || "Not specified"}`;
       
       const whatsappUrl = `https://wa.me/2349064566983?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, "_blank");
@@ -95,7 +84,7 @@ export default function ContactUs() {
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 p-2 rounded-xl bg-zinc-100 text-zinc-800 shrink-0 border border-zinc-200/80">
-                    <MapPin className="w-5 h-5 text-[#EE7130]" />
+                    <MapPin className="w-5 h-5 text-zinc-700" />
                   </div>
                   <div className="space-y-1">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400">Address</h4>
@@ -113,7 +102,7 @@ export default function ContactUs() {
 
                 <div className="flex items-center gap-4 pt-2">
                   <div className="p-2 rounded-xl bg-zinc-100 text-zinc-800 shrink-0 border border-zinc-200/80">
-                    <Clock className="w-5 h-5 text-[#EE7130]" />
+                    <Clock className="w-5 h-5 text-zinc-700" />
                   </div>
                   <div className="space-y-1">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400">Business Hours</h4>
@@ -170,8 +159,8 @@ export default function ContactUs() {
                   <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white uppercase">
                     REQUEST A QUOTE
                   </h3>
-                  <div className="p-2.5 rounded-xl bg-[#EE7130]/20 text-[#EE7130]">
-                    <Zap className="w-5 h-5 fill-[#EE7130]" />
+                  <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    <Zap className="w-5 h-5" />
                   </div>
                 </div>
                 <p className="text-xs sm:text-sm text-zinc-400 mt-2">
@@ -200,7 +189,7 @@ export default function ContactUs() {
                     </button>
                     <a
                       href="tel:09064566983"
-                      className="px-6 py-3 rounded-xl bg-[#EE7130] hover:bg-[#d85f20] text-xs font-bold text-white transition-colors inline-flex items-center justify-center gap-2"
+                      className="px-6 py-3 rounded-xl bg-[#378222] hover:bg-[#2b661a] text-xs font-bold text-white transition-colors inline-flex items-center justify-center gap-2"
                     >
                       <Phone className="w-4 h-4" />
                       <span>Call Sales directly</span>
@@ -210,33 +199,10 @@ export default function ContactUs() {
               ) : (
                 /* Form Inputs */
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Service Category Pills */}
-                  <div className="space-y-2.5">
-                    <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400">
-                      System / Product Interest
-                    </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                      {categories.map((cat) => (
-                        <button
-                          key={cat}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, category: cat })}
-                          className={`px-3 py-2 rounded-xl text-[11px] font-medium text-left transition-all border ${
-                            formData.category === cat
-                              ? "bg-[#EE7130] border-[#EE7130] text-white font-bold shadow-sm"
-                              : "bg-zinc-900/90 border-zinc-800 text-zinc-400 hover:text-zinc-200 hover:border-zinc-700"
-                          }`}
-                        >
-                          {cat}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Name Input */}
                   <div className="space-y-2">
                     <label htmlFor="quote-name" className="block text-xs font-bold text-zinc-300">
-                      Name <span className="text-[#EE7130]">*</span>
+                      Name <span className="text-red-400">*</span>
                     </label>
                     <div className="relative">
                       <User className="w-4 h-4 text-zinc-500 absolute left-4 top-1/2 -translate-y-1/2" />
@@ -247,7 +213,7 @@ export default function ContactUs() {
                         placeholder="Your full name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl py-3.5 pl-11 pr-4 text-xs sm:text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#EE7130] focus:ring-1 focus:ring-[#EE7130] transition-colors"
+                        className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl py-3.5 pl-11 pr-4 text-xs sm:text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                       />
                     </div>
                   </div>
@@ -255,7 +221,7 @@ export default function ContactUs() {
                   {/* Phone Input */}
                   <div className="space-y-2">
                     <label htmlFor="quote-phone" className="block text-xs font-bold text-zinc-300">
-                      Phone <span className="text-[#EE7130]">*</span>
+                      Phone <span className="text-red-400">*</span>
                     </label>
                     <div className="relative">
                       <Phone className="w-4 h-4 text-zinc-500 absolute left-4 top-1/2 -translate-y-1/2" />
@@ -266,7 +232,7 @@ export default function ContactUs() {
                         placeholder="Phone or WhatsApp number e.g. 09064566983"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl py-3.5 pl-11 pr-4 text-xs sm:text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#EE7130] focus:ring-1 focus:ring-[#EE7130] transition-colors"
+                        className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl py-3.5 pl-11 pr-4 text-xs sm:text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
                       />
                     </div>
                   </div>
@@ -280,11 +246,11 @@ export default function ContactUs() {
                       <MessageSquare className="w-4 h-4 text-zinc-500 absolute left-4 top-4" />
                       <textarea
                         id="quote-requirement"
-                        rows={3}
+                        rows={4}
                         placeholder="Tell us about your power load (appliances, home/office size) or specific battery/inverter requirements..."
                         value={formData.requirement}
                         onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                        className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl py-3.5 pl-11 pr-4 text-xs sm:text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-[#EE7130] focus:ring-1 focus:ring-[#EE7130] transition-colors resize-none"
+                        className="w-full bg-zinc-900/90 border border-zinc-800 rounded-xl py-3.5 pl-11 pr-4 text-xs sm:text-sm text-white placeholder:text-zinc-600 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
                       />
                     </div>
                   </div>
@@ -294,7 +260,7 @@ export default function ContactUs() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full inline-flex items-center justify-center gap-2 bg-[#EE7130] hover:bg-[#d85f20] disabled:bg-zinc-700 text-white font-bold text-xs sm:text-sm py-4 px-6 rounded-xl sm:rounded-2xl shadow-lg shadow-[#EE7130]/20 transition-all duration-200 active:scale-[0.99] group cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-2 bg-[#378222] hover:bg-[#2b661a] disabled:bg-zinc-700 text-white font-bold text-xs sm:text-sm py-4 px-6 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-200 active:scale-[0.99] group cursor-pointer"
                     >
                       {loading ? (
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
