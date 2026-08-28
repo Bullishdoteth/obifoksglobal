@@ -7,7 +7,7 @@ import Footer from "@/components/landing/footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white flex flex-col selection:bg-[#ff3b00] selection:text-white">
+    <main className="min-h-screen bg-zinc-950 text-white flex flex-col selection:bg-[#EE7130] selection:text-white">
       <Header />
       <Hero />
       <Brands />

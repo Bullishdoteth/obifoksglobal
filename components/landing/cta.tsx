@@ -24,12 +24,12 @@ export default function CTA() {
         <div className="relative z-20 text-center max-w-2xl mx-auto flex flex-col items-center">
           {/* Main Title */}
           <h2 className="text-white font-bold text-2xl sm:text-3xl md:text-4xl tracking-tight leading-tight mb-2 sm:mb-2.5 drop-shadow-md">
-            Ready to switch to solar?
+            Ready to Take Control of Your Power?
           </h2>
 
           {/* Subtitle */}
           <p className="text-zinc-200/90 text-xs sm:text-sm font-normal max-w-lg text-center mb-6 sm:mb-7 leading-relaxed drop-shadow">
-            Join thousands of Nigerians who trust Obifoks Global for reliable, clean energy.
+            Whether you need a home solar system, business backup power, industrial energy infrastructure or simply the right solar accessories, we're ready to help.
           </p>
 
           {/* Action Buttons Row */}
