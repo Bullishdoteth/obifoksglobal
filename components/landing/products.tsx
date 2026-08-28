@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Check, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/cart-context";
 
@@ -346,6 +347,17 @@ export default function Products() {
 
           </div>
 
+        </div>
+
+        {/* View Full Catalog Link Button */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0B1528] hover:bg-[#13223f] text-white rounded-xl text-sm font-bold shadow-lg transition-all group"
+          >
+            <span>Explore Complete Product Catalog</span>
+            <ArrowRight className="w-4 h-4 text-[#EE7130] group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
       </div>

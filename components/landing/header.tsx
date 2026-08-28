@@ -57,7 +57,7 @@ export default function Header() {
   const navItems = [
     { label: "Home", href: "/", sectionId: "hero" },
     { label: "Solutions", href: "/solutions", hasMegaMenu: true, sectionId: "solutions" },
-    { label: "Products", href: "/#products", sectionId: "products" },
+    { label: "Products", href: "/products", sectionId: "products" },
     { label: "Projects", href: "/projects", sectionId: "projects" },
     { label: "About Us", href: "/about-us", sectionId: "about-us" },
     { label: "Contact us", href: "#contact", sectionId: "contact" },
@@ -287,7 +287,6 @@ export default function Header() {
             {/* Mega Menu Top Header Bar */}
             <div className="flex items-center justify-between pb-4 mb-6 border-b border-zinc-200/80">
               <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-[#EE7130]" />
                 <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">
                   Our 6 Core Renewable Energy &amp; Power Capabilities
                 </span>
