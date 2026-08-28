@@ -3,6 +3,7 @@ import Hero from "@/components/landing/hero";
 import Brands from "@/components/landing/brands";
 import Products from "@/components/landing/products";
 import CTA from "@/components/landing/cta";
+import ContactUs from "@/components/landing/contact-us";
 import Footer from "@/components/landing/footer";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <Brands />
       <Products />
       <CTA />
+      <ContactUs />
       <Footer />
     </main>
   );

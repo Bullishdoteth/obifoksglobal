@@ -60,7 +60,7 @@ export default function Header() {
     { label: "Products", href: "/#products", sectionId: "products" },
     { label: "Projects", href: "/projects", sectionId: "projects" },
     { label: "About Us", href: "/about-us", sectionId: "about-us" },
-    { label: "Contact us", href: "/contact", sectionId: "contact" },
+    { label: "Contact us", href: "#contact", sectionId: "contact" },
   ];
 
   // Track active section hash or hero when on homepage
@@ -276,26 +276,26 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Full-Width Desktop Mega Menu Dropdown Panel */}
+      {/* Full-Width Desktop Mega Menu Dropdown Panel (White Theme) */}
       {solutionsOpen && (
         <div
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="hidden md:block absolute top-full left-0 right-0 w-full bg-zinc-950/98 backdrop-blur-2xl border-b border-white/15 shadow-2xl py-7 animate-in fade-in slide-in-from-top-1 duration-200 z-50"
+          className="hidden md:block absolute top-full left-0 right-0 w-full bg-white text-zinc-900 border-b border-zinc-200/90 shadow-2xl py-7 animate-in fade-in slide-in-from-top-1 duration-200 z-50"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             {/* Mega Menu Top Header Bar */}
-            <div className="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
+            <div className="flex items-center justify-between pb-4 mb-6 border-b border-zinc-200/80">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[#EE7130]" />
-                <span className="text-xs font-bold uppercase tracking-wider text-zinc-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">
                   Our 6 Core Renewable Energy &amp; Power Capabilities
                 </span>
               </div>
               <Link
                 href="/solutions"
                 onClick={() => setSolutionsOpen(false)}
-                className="text-xs font-bold text-[#EE7130] hover:text-[#f88950] flex items-center gap-1.5 transition-colors group/link"
+                className="text-xs font-bold text-[#EE7130] hover:text-[#d85e1f] flex items-center gap-1.5 transition-colors group/link"
               >
                 <span>View All Solutions Overview</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -314,29 +314,29 @@ export default function Header() {
                       key={sol.id}
                       href={`/solutions/${sol.slug}`}
                       onClick={() => setSolutionsOpen(false)}
-                      className="group p-4 rounded-xl border border-white/5 bg-zinc-900/50 hover:bg-zinc-900 hover:border-[#EE7130]/40 transition-all duration-200 flex flex-col justify-between shadow-sm hover:shadow-md"
+                      className="group p-4 rounded-xl border border-zinc-200/80 bg-zinc-50/70 hover:bg-white hover:border-[#EE7130]/50 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
                     >
                       <div className="space-y-2.5">
                         <div className="flex items-center justify-between">
                           <div className="p-2.5 rounded-lg bg-[#EE7130]/10 text-[#EE7130] group-hover:bg-[#EE7130] group-hover:text-white transition-colors flex-shrink-0">
                             <IconComponent className="w-5 h-5 stroke-[2]" />
                           </div>
-                          <span className="text-[10px] font-bold px-2 py-0.5 bg-white/5 text-zinc-400 border border-white/5 rounded-full group-hover:border-[#EE7130]/30 group-hover:text-[#EE7130] transition-colors">
+                          <span className="text-[10px] font-bold px-2 py-0.5 bg-zinc-200/60 text-zinc-600 border border-zinc-200 rounded-full group-hover:border-[#EE7130]/30 group-hover:text-[#EE7130] transition-colors">
                             {sol.badge}
                           </span>
                         </div>
 
                         <div>
-                          <h4 className="text-sm font-bold text-white group-hover:text-[#EE7130] transition-colors">
+                          <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#EE7130] transition-colors">
                             {sol.title}
                           </h4>
-                          <p className="text-xs text-zinc-400 line-clamp-2 mt-1 leading-relaxed">
+                          <p className="text-xs text-zinc-600 line-clamp-2 mt-1 leading-relaxed">
                             {sol.shortDesc}
                           </p>
                         </div>
                       </div>
 
-                      <div className="mt-3 pt-2.5 border-t border-white/5 flex items-center justify-between text-[11px] font-semibold text-zinc-400 group-hover:text-white transition-colors">
+                      <div className="mt-3 pt-2.5 border-t border-zinc-200/60 flex items-center justify-between text-[11px] font-semibold text-zinc-500 group-hover:text-zinc-900 transition-colors">
                         <span>Learn more</span>
                         <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#EE7130]" />
                       </div>
@@ -346,7 +346,7 @@ export default function Header() {
               </div>
 
               {/* Featured Callout Side Banner (3 cols) */}
-              <div className="col-span-3 bg-gradient-to-br from-[#0e2a18] via-zinc-900 to-zinc-950 border border-white/10 rounded-xl p-5 flex flex-col justify-between relative overflow-hidden shadow-xl">
+              <div className="col-span-3 bg-gradient-to-br from-zinc-900 via-zinc-950 to-[#0e2a18] text-white border border-zinc-800 rounded-xl p-5 flex flex-col justify-between relative overflow-hidden shadow-xl">
                 <div className="absolute -top-12 -right-12 w-32 h-32 bg-[#EE7130]/20 rounded-full blur-2xl pointer-events-none" />
                 
                 <div className="space-y-3 relative z-10">
@@ -376,7 +376,7 @@ export default function Header() {
                   </a>
 
                   <Link
-                    href="/contact"
+                    href="#contact"
                     onClick={() => setSolutionsOpen(false)}
                     className="w-full py-2.5 px-3 bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold rounded-lg text-center transition-all flex items-center justify-center gap-1.5 border border-white/10"
                   >
