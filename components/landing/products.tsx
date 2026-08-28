@@ -153,15 +153,15 @@ const productCategories: ProductCategory[] = [
 function FelicitySolarLogo() {
   return (
     <div className="flex items-center gap-2.5 select-none">
-      <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#EE7130] flex items-center justify-center text-white font-extrabold text-lg sm:text-xl shadow-sm border border-orange-400/30">
+      <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-zinc-950 flex items-center justify-center text-white font-extrabold text-lg sm:text-xl shadow-sm border border-zinc-800">
         <span>F</span>
       </div>
       <div className="flex flex-col">
         <div className="flex items-baseline">
-          <span className="text-[#EE7130] font-black text-lg sm:text-xl tracking-tight leading-none">
+          <span className="text-zinc-950 font-black text-lg sm:text-xl tracking-tight leading-none">
             elicitysolar
           </span>
-          <span className="text-[#EE7130] text-[10px] font-semibold ml-0.5 select-none">
+          <span className="text-zinc-950 text-[10px] font-semibold ml-0.5 select-none">
             ®
           </span>
         </div>
@@ -193,7 +193,7 @@ export default function Products() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-          <span className="text-[#EE7130] font-medium italic text-base sm:text-lg block mb-2">
+          <span className="text-zinc-500 font-medium italic text-base sm:text-lg block mb-2">
             Felicity Solar Products
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1528] tracking-tight mb-3">
@@ -280,7 +280,7 @@ export default function Products() {
                 <div className="grid grid-cols-2 gap-2.5 pt-1">
                   {currentModel.specs.map((spec, i) => (
                     <div key={i} className="flex items-center gap-2 text-xs sm:text-sm font-medium text-zinc-700">
-                      <div className="w-4 h-4 rounded-full bg-orange-100 text-[#EE7130] flex items-center justify-center shrink-0">
+                      <div className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center shrink-0">
                         <Check className="w-2.5 h-2.5 stroke-[3]" />
                       </div>
                       <span>{spec}</span>
@@ -302,7 +302,7 @@ export default function Products() {
                       specs: currentModel.specs,
                     })
                   }
-                  className="inline-flex items-center gap-2.5 bg-[#EE7130] hover:bg-[#d9581c] text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-md shadow-[#EE7130]/30 hover:shadow-lg hover:shadow-[#EE7130]/40 hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer"
+                  className="inline-flex items-center gap-2.5 bg-[#378222] hover:bg-[#2b661a] text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-md shadow-emerald-900/20 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer"
                 >
                   <ShoppingBag className="w-4 h-4 stroke-[2.2]" />
                   <span>Add to Cart</span>
@@ -331,7 +331,7 @@ export default function Products() {
                           onClick={() => setActiveModelIndex(idx)}
                           className={`text-left text-sm font-bold transition-all duration-200 py-1.5 px-3 rounded-lg flex items-center justify-between group ${
                             isSelected
-                              ? "text-[#0B1528] bg-zinc-100/80 font-extrabold border-l-4 border-[#EE7130]"
+                              ? "text-[#0B1528] bg-zinc-100/80 font-extrabold border-l-4 border-zinc-950"
                               : "text-zinc-500 hover:text-zinc-900 hover:bg-zinc-50"
                           }`}
                         >
@@ -339,7 +339,7 @@ export default function Products() {
                           <ArrowRight
                             className={`w-4 h-4 transition-transform shrink-0 ${
                               isSelected
-                                ? "text-[#EE7130] translate-x-0 opacity-100"
+                                ? "text-zinc-950 translate-x-0 opacity-100"
                                 : "opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0"
                             }`}
                           />
@@ -363,7 +363,7 @@ export default function Products() {
             className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#0B1528] hover:bg-[#13223f] text-white rounded-xl text-sm font-bold shadow-lg transition-all group"
           >
             <span>Explore Complete Product Catalog</span>
-            <ArrowRight className="w-4 h-4 text-[#EE7130] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
