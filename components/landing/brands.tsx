@@ -135,7 +135,7 @@ export default function Brands() {
         <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 mb-3">
             <span className="w-2 h-2 rounded-full bg-[#ff3b00]" />
-            <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#ff3b00]">
+            <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#378222]">
               TRUSTED PARTNERS
             </span>
           </div>

@@ -26,9 +26,9 @@ export default function Header() {
 
   const navItems = [
     { label: "Home", href: "/", sectionId: "hero" },
-    { label: "Solutions", href: "/solutions", hasMegaMenu: true, sectionId: "solutions" },
     { label: "Products", href: "/products", sectionId: "products" },
-    { label: "Projects", href: "/projects", sectionId: "projects" },
+    { label: "Solutions", href: "/solutions", hasMegaMenu: true, sectionId: "solutions" },
+    { label: "Projects", href: "#projects", sectionId: "projects" },
     { label: "About Us", href: "/about-us", sectionId: "about-us" },
     { label: "Contact us", href: "#contact", sectionId: "contact" },
   ];

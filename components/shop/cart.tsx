@@ -121,7 +121,7 @@ export default function CartSidebar() {
                 <p className="text-xs text-zinc-400 max-w-xs">
                   Add products to request a quote.
                 </p>
-                <button
+                {/* <button
                   onClick={() => {
                     closeCart();
                     const elem = document.getElementById("products");
@@ -133,7 +133,7 @@ export default function CartSidebar() {
                 >
                   <span>Browse Products</span>
                   <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                </button> */}
               </div>
             ) : (
               items.map((item) => (
@@ -147,6 +147,7 @@ export default function CartSidebar() {
                       src={item.image}
                       alt={item.name}
                       fill
+                      sizes="56px"
                       className="object-contain p-1"
                     />
                   </div>

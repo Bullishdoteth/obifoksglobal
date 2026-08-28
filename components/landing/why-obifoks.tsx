@@ -49,8 +49,8 @@ export default function WhyObifoks() {
         
         {/* Section Header Badge & Main Statement */}
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EE7130]/10 border border-[#EE7130]/30 text-[#EE7130] text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#EE7130] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black border border-[#EE7130]/30 text-white text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6">
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             Why Obifoks
           </div>
 
@@ -60,7 +60,7 @@ export default function WhyObifoks() {
 
           <p className="text-zinc-700 text-lg sm:text-xl md:text-2xl font-medium leading-relaxed max-w-3xl">
             We don&apos;t just sell equipment. <br className="hidden sm:inline" />
-            <span className="text-[#EE7130] font-bold">We help you keep it working.</span>
+            <span className="text-[#378222] font-bold">We help you keep it working.</span>
           </p>
         </div>
 
@@ -109,11 +109,8 @@ export default function WhyObifoks() {
         </div>
 
         {/* Bottom Callout banner */}
-        <div className="mt-12 sm:mt-16 p-6 sm:p-8 rounded-2xl bg-zinc-900 text-white border border-zinc-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-zinc-900 text-white border border-zinc-800 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-[#EE7130]/20 flex items-center justify-center shrink-0">
-              <CheckCircle2 className="w-6 h-6 text-[#EE7130]" />
-            </div>
             <div>
               <h4 className="text-white font-bold text-base sm:text-lg">Need help sizing your power system?</h4>
               <p className="text-zinc-400 text-xs sm:text-sm">Speak with an Obifoks solar engineer for a free energy assessment.</p>
@@ -121,7 +118,7 @@ export default function WhyObifoks() {
           </div>
           <Link
             href="#contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#EE7130] hover:bg-[#d96224] text-white font-semibold text-sm px-6 py-3 rounded-xl transition-all duration-200 shadow-lg shadow-[#EE7130]/20 shrink-0"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 hover:bg-[#2b661a] bg-[#378222] text-white font-semibold text-sm px-6 py-3 transition-all duration-200 shrink-0"
           >
             <span>Consult an Engineer</span>
             <ArrowRight className="w-4 h-4" />

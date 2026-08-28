@@ -112,13 +112,13 @@ export default function Projects() {
   const secondaryProjects = projectsData.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-20 sm:py-28 bg-black text-white relative overflow-hidden">
+    <section id="projects" className="scroll-mt-20 py-20 sm:py-28 bg-black text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EE7130]/10 border border-[#EE7130]/30 text-[#EE7130] text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#EE7130]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-black text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
+            <span className="w-2 h-2 rounded-full bg-[#378222]" />
             SELECTED PROJECTS
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
@@ -130,7 +130,7 @@ export default function Projects() {
         </div>
 
         {/* Featured Main Project (FOKS WATER COMPANY) */}
-        <div className="bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl transition-all duration-300 hover:border-zinc-700 mb-12 lg:mb-16 group">
+        <div className="bg-zinc-950 border border-zinc-800 overflow-hidden shadow-2xl transition-all duration-300 hover:border-zinc-700 mb-12 lg:mb-16 group">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
             
             {/* Image Column */}
@@ -139,6 +139,7 @@ export default function Projects() {
                 src={featuredProject.image}
                 alt={featuredProject.name}
                 fill
+                sizes="(max-width: 1024px) 100vw, 58vw"
                 priority
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
               />
@@ -146,10 +147,10 @@ export default function Projects() {
               
               {/* Badge overlay */}
               <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-                <span className="bg-[#EE7130] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
+                <span className="bg-[#EE7130] text-white text-xs font-bold px-3 py-1.5 shadow-lg">
                   FEATURED INSTALLATION
                 </span>
-                <span className="bg-emerald-500/90 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md">
+                <span className="bg-emerald-500/90 text-white text-xs font-bold px-3 py-1.5 backdrop-blur-md">
                   100% OPERATIONAL
                 </span>
               </div>
@@ -172,10 +173,10 @@ export default function Projects() {
                 </p>
 
                 {/* Specs Box */}
-                <div className="bg-zinc-900/90 border border-zinc-800 rounded-2xl p-4 sm:p-5 mb-8 space-y-3">
+                <div className="bg-zinc-900/90 border border-zinc-800 p-4 sm:p-5 mb-8 space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#EE7130]/15 flex items-center justify-center shrink-0">
-                      <BatteryCharging className="w-4.5 h-4.5 text-[#EE7130]" />
+                    <div className="w-8 h-8 bg-white flex items-center justify-center shrink-0">
+                      <BatteryCharging className="w-4.5 h-4.5 text-[#378222]" />
                     </div>
                     <div>
                       <span className="text-xs text-zinc-400 uppercase tracking-wider block font-semibold">Battery Storage</span>
@@ -186,8 +187,8 @@ export default function Projects() {
                   <div className="w-full h-px bg-zinc-800" />
 
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#EE7130]/15 flex items-center justify-center shrink-0">
-                      <Sun className="w-4.5 h-4.5 text-[#EE7130]" />
+                    <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center shrink-0">
+                      <Sun className="w-4.5 h-4.5 text-[#378222]" />
                     </div>
                     <div>
                       <span className="text-xs text-zinc-400 uppercase tracking-wider block font-semibold">Solar Generation</span>
@@ -201,7 +202,7 @@ export default function Projects() {
               <div>
                 <button
                   onClick={() => setSelectedProject(featuredProject)}
-                  className="inline-flex items-center gap-2 bg-white hover:bg-zinc-100 text-zinc-950 font-bold text-sm px-6 py-3.5 rounded-xl transition-all duration-200 shadow-lg active:scale-95 group/btn"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-zinc-100 text-zinc-950 font-bold text-sm px-6 py-3.5 transition-all duration-200 shadow-lg active:scale-95 group/btn"
                 >
                   <span>View Project Details</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
@@ -219,7 +220,7 @@ export default function Projects() {
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="bg-zinc-950 border border-zinc-800 hover:border-[#EE7130]/50 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group cursor-pointer flex flex-col justify-between"
+              className="bg-zinc-950 border border-zinc-800 hover:border-[#EE7130]/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group cursor-pointer flex flex-col justify-between"
             >
               <div>
                 {/* Thumbnail Image Header */}
@@ -228,6 +229,7 @@ export default function Projects() {
                     src={project.image}
                     alt={project.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
@@ -281,6 +283,7 @@ export default function Projects() {
                 src={selectedProject.image}
                 alt={selectedProject.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 768px"
                 className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80" />

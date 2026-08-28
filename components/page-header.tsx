@@ -31,6 +31,7 @@ export default function PageHeader({
           src={bgImage}
           alt={title}
           fill
+          sizes="100vw"
           priority
           className="object-cover object-center filter brightness-[0.45] contrast-[1.1]"
         />

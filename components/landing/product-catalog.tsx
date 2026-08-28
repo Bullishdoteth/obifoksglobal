@@ -120,16 +120,16 @@ export default function ProductCatalog() {
   };
 
   return (
-    <section id="products" className="scroll-mt-20 min-h-screen flex flex-col justify-center pt-28 sm:pt-36 lg:pt-44 pb-24 sm:pb-32 lg:pb-40 bg-white border-b border-zinc-100 overflow-hidden">
+    <section id="products" className="scroll-mt-20 py-20 sm:py-28 lg:py-32 bg-white border-b border-zinc-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
         
         {/* Section Header with Top Subtitle & See All Products Link */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-14">
-          <div>
-            <span className="text-[#EE7130] font-semibold text-sm sm:text-base block mb-1">
-              Our Products
+          <div className="space-y-3 sm:space-y-4">
+            <span className="inline-block px-3 py-1.5 bg-[#378222] border border-[#EE7130]/30 text-white text-[11px] font-bold tracking-wider uppercase">
+              OUR PRODUCTS
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1528] tracking-tight mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1528] tracking-tight">
               Top Selling Products
             </h2>
             <p className="text-zinc-500 text-xs sm:text-sm md:text-base font-normal max-w-2xl">
@@ -139,7 +139,7 @@ export default function ProductCatalog() {
 
           <Link
             href="/products"
-            className="inline-flex items-center gap-1.5 text-[#EE7130] hover:text-[#d85e1f] font-bold text-sm sm:text-base transition-colors shrink-0 group"
+            className="inline-flex items-center gap-1.5 text-black hover:text-[#d85e1f] font-bold text-sm sm:text-base transition-colors shrink-0 group"
           >
             <span>See all products</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -147,18 +147,18 @@ export default function ProductCatalog() {
         </div>
 
         {/* 8 Products Grid: 2 cols on mobile, 3 cols on tablet, 4 cols on desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-10 sm:gap-y-14 lg:gap-y-16 w-full">
           {TOP_SELLING_PRODUCTS.map((product) => {
             const isAdded = addedItemIds[product.id];
 
             return (
               <div
                 key={product.id}
-                className="group flex flex-col justify-between items-center text-center transition-all duration-300"
+                className="group flex flex-col justify-between items-start text-left transition-all duration-300 w-full"
               >
                 {/* Product Image Container Box */}
-                <div className="w-full bg-[#F1F3F6] rounded-xl sm:rounded-2xl p-3 sm:p-6 h-48 sm:h-64 lg:h-72 flex items-center justify-center relative overflow-hidden border border-zinc-200/50 group-hover:border-orange-300/70 group-hover:shadow-lg group-hover:shadow-orange-500/5 transition-all duration-300">
-                  <div className="relative w-full h-full max-h-40 sm:max-h-52 transition-transform duration-300 group-hover:scale-105">
+                <div className="w-full h-48 sm:h-56 lg:h-64 relative overflow-hidden bg-[#EBEBEB] border border-zinc-100/80 p-3 flex items-center justify-center transition-all duration-300 group-hover:border-zinc-200">
+                  <div className="relative w-full h-full transition-transform duration-300 group-hover:scale-105">
                     <Image
                       src={product.image}
                       alt={product.name}
@@ -170,18 +170,18 @@ export default function ProductCatalog() {
                 </div>
 
                 {/* Product Info below card image */}
-                <div className="w-full mt-3 sm:mt-4 flex flex-col items-center flex-grow">
-                  <h3 className="text-xs sm:text-sm font-bold text-zinc-800 text-center line-clamp-2 min-h-[2.2rem] sm:min-h-[2.5rem] px-1 mb-1 sm:mb-1.5 leading-snug group-hover:text-[#EE7130] transition-colors">
+                <div className="w-full mt-4 sm:mt-5 flex flex-col items-start flex-grow text-left space-y-2.5 sm:space-y-3">
+                  <h3 className="text-xs sm:text-sm font-bold text-zinc-800 line-clamp-2 min-h-[2.2rem] sm:min-h-[2.5rem] leading-snug group-hover:text-[#2b661a] transition-colors w-full">
                     {product.name}
                   </h3>
 
-                  <span className="text-sm sm:text-base lg:text-lg font-extrabold text-[#0B1528] mb-2.5 sm:mb-3">
+                  <span className="text-sm sm:text-base lg:text-lg font-extrabold text-[#0B1528] block w-full">
                     {product.price}
                   </span>
 
                   <button
                     onClick={() => setSelectedProduct(product)}
-                    className="w-full max-w-[130px] sm:max-w-[160px] bg-[#EE7130] hover:bg-[#d85e1f] text-white text-[11px] sm:text-xs font-bold py-2 sm:py-2.5 px-3 sm:px-4 rounded-lg sm:rounded-xl shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+                    className="w-full bg-black hover:bg-[#2b661a] text-white text-[11px] sm:text-xs font-bold py-2.5 sm:py-3 px-3 sm:px-4 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer text-center"
                   >
                     View Details
                   </button>
@@ -192,10 +192,10 @@ export default function ProductCatalog() {
         </div>
 
         {/* View All Products Bottom Action Button */}
-        <div className="mt-14 sm:mt-16 text-center">
+        <div className="mt-14 sm:mt-20 text-center">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#EE7130] hover:bg-[#d85e1f] text-white rounded-xl text-sm font-bold shadow-lg shadow-orange-500/20 hover:shadow-orange-500/35 transition-all duration-300 group"
+            className="inline-flex items-center gap-2 hover:text-#2b661a] text-black text-sm font-bold transition-all duration-300 group"
           >
             <span>View All Products</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -207,10 +207,10 @@ export default function ProductCatalog() {
       {/* Product Detail Modal */}
       {selectedProduct && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-zinc-200">
+          <div className="relative w-full max-w-2xl bg-white shadow-2xl overflow-hidden border border-zinc-200">
             
             {/* Modal Header */}
-            <div className="p-6 border-b border-zinc-100 flex items-start justify-between bg-zinc-50/80">
+            <div className="p-6 border-b border-zinc-100 flex items-start justify-between bg-transparent">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-[#EE7130] block mb-0.5">
                   {selectedProduct.category}
@@ -230,12 +230,13 @@ export default function ProductCatalog() {
 
             {/* Modal Content */}
             <div className="p-6 space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center bg-[#F1F3F6] p-4 rounded-2xl border border-zinc-200/60">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center bg-transparent p-4">
                 <div className="relative h-48 w-full">
                   <Image
                     src={selectedProduct.image}
                     alt={selectedProduct.name}
                     fill
+                    sizes="(max-width: 640px) 100vw, 50vw"
                     className="object-contain"
                   />
                 </div>
@@ -259,7 +260,7 @@ export default function ProductCatalog() {
                   {selectedProduct.specs.map((spec, idx) => (
                     <div
                       key={idx}
-                      className="bg-zinc-50 border border-zinc-200/70 rounded-xl p-2.5 text-xs font-medium text-zinc-700 flex items-center gap-2"
+                      className="bg-zinc-50 border border-zinc-200/70 p-2.5 text-xs font-medium text-zinc-700 flex items-center gap-2"
                     >
                       <Check className="w-3.5 h-3.5 text-[#EE7130] shrink-0" />
                       <span>{spec}</span>
@@ -273,7 +274,7 @@ export default function ProductCatalog() {
             <div className="p-6 border-t border-zinc-100 bg-zinc-50/80 flex items-center gap-3">
               <button
                 onClick={() => handleAddToCart(selectedProduct)}
-                className={`flex-1 py-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 transition-all ${
+                className={`flex-1 py-3 text-xs font-bold flex items-center justify-center gap-2 transition-all ${
                   addedItemIds[selectedProduct.id]
                     ? "bg-emerald-600 text-white"
                     : "bg-[#0B1528] hover:bg-[#13223f] text-white"
@@ -294,9 +295,9 @@ export default function ProductCatalog() {
                 href={getWhatsAppLink(selectedProduct)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all"
+                className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all"
               >
-                <MessageSquare className="w-4 h-4" /> Inquire via WhatsApp
+               Inquire via WhatsApp
               </a>
             </div>
 

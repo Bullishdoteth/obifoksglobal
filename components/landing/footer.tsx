@@ -31,11 +31,6 @@ export default function Footer() {
             <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[260px] pt-1">
               Reliable energy solutions for homes, businesses and industries.
             </p>
-            <div className="pt-2">
-              <span className="inline-block px-3 py-1.5 rounded-full bg-[#EE7130]/10 border border-[#EE7130]/30 text-[#EE7130] text-[11px] font-bold tracking-wider uppercase">
-                WE ARE HERE TO SERVE YOU.
-              </span>
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}

@@ -13,6 +13,7 @@ export default function CTA() {
           src="/cta-bg.jpg"
           alt="Happy couple enjoying clean solar energy"
           fill
+          sizes="(max-width: 1024px) 100vw, 896px"
           priority
           className="object-cover object-center scale-105 filter brightness-90"
         />

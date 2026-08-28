@@ -75,7 +75,7 @@ export default function EnergySolutions() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-zinc-800/80">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-[#EE7130] text-xs font-semibold uppercase tracking-widest mb-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-zinc-900 border border-zinc-800 text-white text-xs font-semibold uppercase tracking-widest mb-4">
               <Zap className="w-3.5 h-3.5" />
               ENERGY SOLUTIONS
             </div>
@@ -184,7 +184,7 @@ export default function EnergySolutions() {
 
           {/* Right Column: Editorial Image & Details Stage (Desktop/Tablet) */}
           <div className="lg:col-span-6 relative flex flex-col">
-            <div className="relative w-full h-[400px] sm:h-[480px] lg:h-full min-h-[420px] rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl group">
+            <div className="relative w-full h-[400px] sm:h-[480px] lg:h-full min-h-[420px] overflow-hidden border border-zinc-800 bg-zinc-900 shadow-2xl group">
               
               {/* Dynamic Image with Smooth Transition */}
               <Image
@@ -192,6 +192,7 @@ export default function EnergySolutions() {
                 src={current.image}
                 alt={current.title}
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
                 className="object-cover object-center transition-all duration-700 ease-out group-hover:scale-105"
               />
@@ -220,9 +221,9 @@ export default function EnergySolutions() {
                   {current.features.map((feat, i) => (
                     <span
                       key={i}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-xs font-medium"
+                      className="inline-flex items-center gap-1.5 px-3 py-1 bg-zinc-900/90 border border-zinc-800 text-zinc-300 text-xs font-medium"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#EE7130]" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-white" />
                       {feat}
                     </span>
                   ))}
@@ -231,7 +232,7 @@ export default function EnergySolutions() {
                 {/* Action Link */}
                 <Link
                   href={current.href}
-                  className="inline-flex items-center gap-2 bg-[#EE7130] hover:bg-[#ff8547] text-white font-semibold text-sm px-6 py-2.5 rounded-lg transition-all duration-200 shadow-lg shadow-[#EE7130]/20 hover:scale-[1.02] active:scale-95"
+                  className="inline-flex items-center gap-2  bg-[#378222] hover:bg-[#2b661a] text-white font-semibold text-sm px-6 py-2.5 transition-all duration-200 hover:scale-[1.02] active:scale-95"
                 >
                   Consult an Engineer
                   <ArrowUpRight className="w-4 h-4" />

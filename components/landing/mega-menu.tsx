@@ -28,7 +28,7 @@ export default function MegaMenu({ onClose, onMouseEnter, onMouseLeave }: MegaMe
           <Link
             href="/solutions"
             onClick={onClose}
-            className="text-xs font-bold text-[#EE7130] hover:text-[#d85e1f] flex items-center gap-1.5 transition-colors group/link"
+            className="text-xs font-bold text-[#378222] hover:text-[#2b661a] flex items-center gap-1.5 transition-colors group/link"
           >
             <span>View All Solutions Overview</span>
             <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -45,14 +45,14 @@ export default function MegaMenu({ onClose, onMouseEnter, onMouseLeave }: MegaMe
                 key={sol.id}
                 href={`/solutions/${sol.slug}`}
                 onClick={onClose}
-                className="group p-4 rounded-xl border border-zinc-200/80 bg-zinc-50/70 hover:bg-white hover:border-[#EE7130]/50 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+                className="group p-4 border border-zinc-200/80 bg-zinc-50/70 hover:bg-white transition-all duration-200 flex flex-col justify-between"
               >
-                <div className="space-y-2">
+                <div className="space-y-6">
                   <div className="flex items-center justify-between gap-2">
-                    <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#EE7130] transition-colors">
+                    <h4 className="text-sm font-bold text-zinc-900 group-hover:text-black transition-colors">
                       {sol.title}
                     </h4>
-                    <span className="text-[10px] font-bold px-2 py-0.5 bg-zinc-200/60 text-zinc-600 border border-zinc-200 rounded-full group-hover:border-[#EE7130]/30 group-hover:text-[#EE7130] transition-colors shrink-0">
+                    <span className="text-[10px] font-bold px-2 py-0.5 bg-zinc-10 text-zinc-200 rounded-full group-hover:text-white group-hover:bg-[#378222] transition-colors shrink-0">
                       {sol.badge}
                     </span>
                   </div>
@@ -64,7 +64,7 @@ export default function MegaMenu({ onClose, onMouseEnter, onMouseLeave }: MegaMe
 
                 <div className="mt-3 pt-2.5 border-t border-zinc-200/60 flex items-center justify-between text-[11px] font-semibold text-zinc-500 group-hover:text-zinc-900 transition-colors">
                   <span>Learn more</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#EE7130]" />
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#378222]" />
                 </div>
               </Link>
             ))}

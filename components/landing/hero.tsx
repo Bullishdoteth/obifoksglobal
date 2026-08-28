@@ -10,6 +10,7 @@ export default function Hero() {
           src="/assets/hero.jpg"
           alt="Solar System Installation on Roof"
           fill
+          sizes="100vw"
           priority
           className="object-cover object-center scale-105"
         />
