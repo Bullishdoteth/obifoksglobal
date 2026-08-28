@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/landing/header";
+import PageHeader from "@/components/page-header";
 import Footer from "@/components/landing/footer";
 import { useCart } from "@/context/cart-context";
 import { 
@@ -106,74 +107,10 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-[#EE7130] selection:text-white">
       <Header />
 
-      {/* Page Hero Header Section (White Theme with soft radial accent) */}
-      <section className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 bg-gradient-to-b from-orange-50/40 via-white to-white border-b border-zinc-100 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs font-semibold text-zinc-500 mb-6">
-            <Link href="/" className="hover:text-[#EE7130] transition-colors">Home</Link>
-            <ChevronRight className="w-3.5 h-3.5 text-zinc-400" />
-            <span className="text-[#EE7130] font-bold">Products & Equipment</span>
-          </div>
-
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-100/80 border border-orange-200 rounded-full text-xs font-bold text-[#EE7130] uppercase tracking-wider mb-4">
-                <FelicitySolarLogo />
-                <span className="hidden sm:inline text-zinc-400">|</span>
-                <span className="hidden sm:inline">Official Authorized Distributor</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1528] tracking-tight mb-3 leading-tight">
-                Felicity Solar Equipment Catalog
-              </h1>
-              <p className="text-zinc-600 text-sm sm:text-base md:text-lg leading-relaxed">
-                Explore our high-efficiency monocrystalline solar panels, LiFePO4 lithium storage batteries, hybrid pure sine wave inverters, MPPT controllers, and commercial solar street lighting.
-              </p>
-            </div>
-
-            {/* Trust Badges Pill Bar */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:w-96 bg-zinc-50 p-4 rounded-2xl border border-zinc-200/80 shadow-sm">
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-orange-50 text-[#EE7130]">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-[#0B1528]">100% Genuine</div>
-                  <div className="text-[11px] text-zinc-500">Factory Warranty</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-orange-50 text-[#EE7130]">
-                  <Truck className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-[#0B1528]">Fast Delivery</div>
-                  <div className="text-[11px] text-zinc-500">Imo & Nationwide</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-orange-50 text-[#EE7130]">
-                  <Zap className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-[#0B1528]">6000+ Cycles</div>
-                  <div className="text-[11px] text-zinc-500">LiFePO4 Storage</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <div className="p-2 rounded-lg bg-orange-50 text-[#EE7130]">
-                  <PhoneCall className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold text-[#0B1528]">Owerri Showroom</div>
-                  <div className="text-[11px] text-zinc-500">Physical Support</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Products & Equipment"
+        subtitle="Official Felicity Solar equipment catalog, solar panels, LiFePO4 batteries, and inverters."
+      />
 
       {/* Main Catalog Body */}
       <section className="py-10 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex-grow">

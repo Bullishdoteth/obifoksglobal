@@ -1,4 +1,5 @@
 import Header from "@/components/landing/header";
+import PageHeader from "@/components/page-header";
 import Footer from "@/components/landing/footer";
 import Link from "next/link";
 import { SOLUTIONS_DATA, SolutionItem } from "@/lib/solutions-data";
@@ -45,23 +46,10 @@ export default function SolutionsHubPage() {
   return (
     <main className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-[#EE7130] selection:text-white">
       <Header />
-
-      {/* Hero Section */}
-      <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b border-zinc-100 bg-gradient-to-b from-zinc-50 via-white to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-orange-50 border border-orange-200/80 rounded-full text-xs font-semibold text-[#EE7130] uppercase tracking-wider">
-              Engineered Clean Energy
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B1528] leading-tight">
-              Tailored Power &amp; Renewable Solutions
-            </h1>
-            <p className="text-zinc-600 text-sm sm:text-base md:text-lg leading-relaxed">
-              From residential homes to commercial complexes and industrial microgrids, Obifoks Global provides high-performance solar installations, lithium storage, surveillance, and street lighting.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHeader
+        title="Our Energy Solutions"
+        subtitle="Comprehensive solar power, lithium energy storage, and industrial security infrastructure."
+      />
 
       {/* Solutions Grid Section */}
       <section className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">

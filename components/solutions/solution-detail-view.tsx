@@ -1,4 +1,5 @@
 import Header from "@/components/landing/header";
+import PageHeader from "@/components/page-header";
 import Footer from "@/components/landing/footer";
 import Link from "next/link";
 import { SolutionItem } from "@/lib/solutions-data";
@@ -50,20 +51,15 @@ export default function SolutionDetailView({ solution }: Props) {
     <main className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-[#EE7130] selection:text-white">
       <Header />
 
-      {/* Breadcrumb Header */}
-      <section className="bg-zinc-50 border-b border-zinc-200/80 py-3.5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center gap-2 text-xs text-zinc-500">
-          <Link href="/" className="hover:text-zinc-900 transition-colors">
-            Home
-          </Link>
-          <span>/</span>
-          <Link href="/solutions" className="hover:text-zinc-900 transition-colors">
-            Solutions
-          </Link>
-          <span>/</span>
-          <span className="text-[#EE7130] font-semibold">{solution.title}</span>
-        </div>
-      </section>
+      <PageHeader
+        title={solution.title}
+        subtitle={solution.subtitle}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Solutions", href: "/solutions" },
+          { label: solution.title },
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative pt-12 pb-16 md:pt-16 md:pb-20 border-b border-zinc-200/80 bg-gradient-to-b from-zinc-50 via-white to-white overflow-hidden">

@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Header from "@/components/landing/header";
+import PageHeader from "@/components/page-header";
 import Footer from "@/components/landing/footer";
 import { 
   PROJECTS_DATA, 
@@ -62,50 +63,13 @@ export default function ProjectsPage() {
       {/* Header */}
       <Header />
 
+      <PageHeader
+        title="Our Projects"
+        subtitle="Explore commercial, industrial, and agricultural solar power deployments across Nigeria."
+      />
+
       {/* Main Content */}
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-white border-b border-zinc-200 py-12 sm:py-16 lg:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-50 border border-orange-200 text-[#EE7130] text-xs font-bold uppercase tracking-wider mb-4">
-                <span>Notable Projects & Field Deployments</span>
-              </div>
-              
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-zinc-900 tracking-tight leading-tight mb-6">
-                Proven Solar Installations & High-Capacity Battery Energy Storage
-              </h1>
-              
-              <p className="text-base sm:text-lg text-zinc-600 leading-relaxed mb-8">
-                Explore our flagship commercial, industrial, and agricultural solar power deployments across Irete, Owerri, and Imo State. Built for heavy factory loads, multi-pump fueling stations, and continuous agricultural uptime.
-              </p>
-
-              {/* Quick Stat Highlights */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-zinc-200 pt-8">
-                <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200/80">
-                  <div className="text-2xl sm:text-3xl font-black text-[#EE7130]">265+ kWh</div>
-                  <div className="text-xs font-semibold text-zinc-600 mt-1 uppercase tracking-wide">
-                    Battery Storage Deployed
-                  </div>
-                </div>
-                
-                <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200/80">
-                  <div className="text-2xl sm:text-3xl font-black text-zinc-900">200+ Panels</div>
-                  <div className="text-xs font-semibold text-zinc-600 mt-1 uppercase tracking-wide">
-                    High-Wattage Solar Arrays
-                  </div>
-                </div>
-
-                <div className="p-4 bg-zinc-50 rounded-lg border border-zinc-200/80">
-                  <div className="text-2xl sm:text-3xl font-black text-zinc-900">100% Uptime</div>
-                  <div className="text-xs font-semibold text-zinc-600 mt-1 uppercase tracking-wide">
-                    Mission Critical Reliability
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Filter & Search Toolbar */}
         <section className="bg-white sticky top-[65px] z-30 border-b border-zinc-200 shadow-sm py-4">
