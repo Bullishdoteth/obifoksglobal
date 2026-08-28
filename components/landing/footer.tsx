@@ -50,17 +50,17 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#solutions" className="hover:text-white transition-colors">
+                <Link href="/solutions" className="hover:text-white transition-colors">
                   Solutions
                 </Link>
               </li>
               <li>
-                <Link href="#products" className="hover:text-white transition-colors">
+                <Link href="/products" className="hover:text-white transition-colors">
                   Products
                 </Link>
               </li>
               <li>
-                <Link href="#projects" className="hover:text-white transition-colors">
+                <Link href="/projects" className="hover:text-white transition-colors">
                   Projects
                 </Link>
               </li>
@@ -70,7 +70,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   Contact
                 </Link>
               </li>
@@ -84,32 +84,32 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-xs sm:text-sm text-zinc-400">
               <li>
-                <Link href="#solutions" className="hover:text-white transition-colors">
+                <Link href="/solutions/residential-solar" className="hover:text-white transition-colors">
                   Residential Solar
                 </Link>
               </li>
               <li>
-                <Link href="#solutions" className="hover:text-white transition-colors">
+                <Link href="/solutions/commercial-solar" className="hover:text-white transition-colors">
                   Commercial Solar
                 </Link>
               </li>
               <li>
-                <Link href="#solutions" className="hover:text-white transition-colors">
+                <Link href="/solutions/industrial-solar" className="hover:text-white transition-colors">
                   Industrial Solar
                 </Link>
               </li>
               <li>
-                <Link href="#solutions" className="hover:text-white transition-colors">
+                <Link href="/solutions/energy-storage" className="hover:text-white transition-colors">
                   Energy Storage
                 </Link>
               </li>
               <li>
-                <Link href="#solutions" className="hover:text-white transition-colors">
+                <Link href="/solutions/security-and-cctv" className="hover:text-white transition-colors">
                   Security &amp; CCTV
                 </Link>
               </li>
               <li>
-                <Link href="#solutions" className="hover:text-white transition-colors">
+                <Link href="/solutions/solar-lighting" className="hover:text-white transition-colors">
                   Solar Lighting
                 </Link>
               </li>
@@ -123,22 +123,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-xs sm:text-sm text-zinc-400">
               <li>
-                <Link href="#contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   Installation
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   Maintenance
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   After-Sales Support
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-white transition-colors">
+                <Link href="/contact#quote" className="hover:text-white transition-colors">
                   Request a Quote
                 </Link>
               </li>
@@ -223,4 +223,3 @@ export default function Footer() {
     </footer>
   );
 }
-
