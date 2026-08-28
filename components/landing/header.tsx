@@ -79,11 +79,12 @@ export default function Header() {
     };
   }, [pathname]);
 
-  // Close mega menu when clicking outside
+  // Close mega menu & mobile menu when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setSolutionsOpen(false);
+        setMobileMenuOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -255,25 +256,25 @@ export default function Header() {
         />
       )}
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Overlay Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-zinc-950 border-b border-white/10 px-4 sm:px-6 py-4 space-y-3 animate-in fade-in duration-200 max-h-[85vh] overflow-y-auto">
-          <ul className="flex flex-col space-y-2">
+        <div className="md:hidden absolute top-full left-0 right-0 w-full bg-zinc-950/98 backdrop-blur-xl border-b border-white/10 px-6 py-6 sm:px-8 sm:py-8 shadow-2xl animate-in slide-in-from-top-2 duration-200 max-h-[calc(100vh-5rem)] overflow-y-auto z-50">
+          <ul className="flex flex-col space-y-1">
             {navItems.map((item) => {
               const active = isItemActive(item);
 
               if (item.hasMegaMenu) {
                 return (
-                  <li key={item.label} className="border-b border-white/5 pb-2">
+                  <li key={item.label} className="border-b border-white/10 pb-3 mb-2">
                     <button
                       onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                      className={`w-full flex items-center justify-between py-2 text-sm font-medium focus:outline-none ${
-                        active ? "text-[#EE7130] font-semibold" : "text-zinc-300 hover:text-white"
+                      className={`w-full flex items-center justify-between py-3 text-base font-semibold focus:outline-none ${
+                        active ? "text-[#EE7130]" : "text-zinc-200 hover:text-white"
                       }`}
                     >
                       <span>Solutions</span>
                       <ChevronDown
-                        className={`w-4 h-4 text-zinc-400 transition-transform ${
+                        className={`w-5 h-5 text-zinc-400 transition-transform duration-200 ${
                           mobileSolutionsOpen ? "rotate-180 text-[#EE7130]" : ""
                         }`}
                       />
@@ -281,11 +282,11 @@ export default function Header() {
 
                     {/* Mobile Solutions Accordion Sub-menu */}
                     {mobileSolutionsOpen && (
-                      <div className="mt-2 ml-2 pl-3 border-l-2 border-[#EE7130]/40 space-y-2 py-1">
+                      <div className="mt-2 ml-2 pl-4 border-l-2 border-[#EE7130]/60 space-y-2.5 py-2">
                         <Link
                           href="/solutions"
                           onClick={() => setMobileMenuOpen(false)}
-                          className="block text-xs font-bold text-[#EE7130] py-1"
+                          className="block text-xs font-bold text-[#EE7130] py-1.5 uppercase tracking-wider"
                         >
                           All Solutions Overview →
                         </Link>
@@ -294,7 +295,7 @@ export default function Header() {
                             key={sol.id}
                             href={`/solutions/${sol.slug}`}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-1.5 text-xs text-zinc-300 hover:text-white"
+                            className="block py-1.5 text-sm text-zinc-300 hover:text-white font-medium transition-colors"
                           >
                             <span>{sol.title}</span>
                           </Link>
@@ -306,14 +307,14 @@ export default function Header() {
               }
 
               return (
-                <li key={item.label}>
+                <li key={item.label} className="border-b border-white/5 last:border-b-0">
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center justify-between py-2 text-sm font-medium transition-colors ${
+                    className={`flex items-center justify-between py-3 text-base font-semibold transition-colors ${
                       active
-                        ? "text-[#EE7130] font-semibold"
-                        : "text-zinc-300 hover:text-white"
+                        ? "text-[#EE7130]"
+                        : "text-zinc-200 hover:text-white"
                     }`}
                   >
                     <span>{item.label}</span>
