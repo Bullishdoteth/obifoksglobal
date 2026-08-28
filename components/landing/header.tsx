@@ -8,41 +8,11 @@ import {
   ShoppingBag, 
   Search, 
   Menu, 
-  X, 
-  Home, 
-  Building2, 
-  Factory, 
-  BatteryCharging, 
-  ShieldCheck, 
-  SunMedium, 
-  ArrowRight,
-  Zap,
-  Sparkles,
-  PhoneCall,
-  CheckCircle2
+  X
 } from "lucide-react";
 import { useCart } from "@/context/cart-context";
-import { SOLUTIONS_DATA, SolutionItem } from "@/lib/solutions-data";
-
-// Helper function to map icon string to Lucide component
-function getSolutionIcon(iconName: string) {
-  switch (iconName) {
-    case "Home":
-      return Home;
-    case "Building2":
-      return Building2;
-    case "Factory":
-      return Factory;
-    case "BatteryCharging":
-      return BatteryCharging;
-    case "ShieldCheck":
-      return ShieldCheck;
-    case "SunMedium":
-      return SunMedium;
-    default:
-      return Zap;
-  }
-}
+import { SOLUTIONS_DATA } from "@/lib/solutions-data";
+import MegaMenu from "@/components/landing/mega-menu";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -276,118 +246,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Full-Width Desktop Mega Menu Dropdown Panel (White Theme) */}
+      {/* Full-Width Desktop Mega Menu Dropdown Panel */}
       {solutionsOpen && (
-        <div
+        <MegaMenu
+          onClose={() => setSolutionsOpen(false)}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          className="hidden md:block absolute top-full left-0 right-0 w-full bg-white text-zinc-900 border-b border-zinc-200/90 shadow-2xl py-7 animate-in fade-in slide-in-from-top-1 duration-200 z-50"
-        >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-            {/* Mega Menu Top Header Bar */}
-            <div className="flex items-center justify-between pb-4 mb-6 border-b border-zinc-200/80">
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-zinc-500">
-                  Our 6 Core Renewable Energy &amp; Power Capabilities
-                </span>
-              </div>
-              <Link
-                href="/solutions"
-                onClick={() => setSolutionsOpen(false)}
-                className="text-xs font-bold text-[#EE7130] hover:text-[#d85e1f] flex items-center gap-1.5 transition-colors group/link"
-              >
-                <span>View All Solutions Overview</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-
-            {/* Mega Menu Full-Width Grid (9 Cols Cards + 3 Cols Side Banner) */}
-            <div className="grid grid-cols-12 gap-6 items-stretch">
-              
-              {/* 6 Solution Cards in a spacious 3x2 Grid (9 cols) */}
-              <div className="col-span-9 grid grid-cols-3 gap-4">
-                {SOLUTIONS_DATA.map((sol: SolutionItem) => {
-                  const IconComponent = getSolutionIcon(sol.iconName);
-                  return (
-                    <Link
-                      key={sol.id}
-                      href={`/solutions/${sol.slug}`}
-                      onClick={() => setSolutionsOpen(false)}
-                      className="group p-4 rounded-xl border border-zinc-200/80 bg-zinc-50/70 hover:bg-white hover:border-[#EE7130]/50 hover:shadow-md transition-all duration-200 flex flex-col justify-between"
-                    >
-                      <div className="space-y-2.5">
-                        <div className="flex items-center justify-between">
-                          <div className="p-2.5 rounded-lg bg-[#EE7130]/10 text-[#EE7130] group-hover:bg-[#EE7130] group-hover:text-white transition-colors flex-shrink-0">
-                            <IconComponent className="w-5 h-5 stroke-[2]" />
-                          </div>
-                          <span className="text-[10px] font-bold px-2 py-0.5 bg-zinc-200/60 text-zinc-600 border border-zinc-200 rounded-full group-hover:border-[#EE7130]/30 group-hover:text-[#EE7130] transition-colors">
-                            {sol.badge}
-                          </span>
-                        </div>
-
-                        <div>
-                          <h4 className="text-sm font-bold text-zinc-900 group-hover:text-[#EE7130] transition-colors">
-                            {sol.title}
-                          </h4>
-                          <p className="text-xs text-zinc-600 line-clamp-2 mt-1 leading-relaxed">
-                            {sol.shortDesc}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="mt-3 pt-2.5 border-t border-zinc-200/60 flex items-center justify-between text-[11px] font-semibold text-zinc-500 group-hover:text-zinc-900 transition-colors">
-                        <span>Learn more</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#EE7130]" />
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-
-              {/* Featured Callout Side Banner (3 cols) */}
-              <div className="col-span-3 bg-gradient-to-br from-zinc-900 via-zinc-950 to-[#0e2a18] text-white border border-zinc-800 rounded-xl p-5 flex flex-col justify-between relative overflow-hidden shadow-xl">
-                <div className="absolute -top-12 -right-12 w-32 h-32 bg-[#EE7130]/20 rounded-full blur-2xl pointer-events-none" />
-                
-                <div className="space-y-3 relative z-10">
-                  <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#459628]/20 border border-[#459628]/30 rounded-full text-[10px] font-bold text-[#459628] uppercase tracking-wide">
-                    <CheckCircle2 className="w-3 h-3" /> Free Energy Audit
-                  </span>
-                  
-                  <h4 className="text-base font-extrabold text-white leading-snug">
-                    Need a Custom Solar Sizing &amp; Design?
-                  </h4>
-                  
-                  <p className="text-xs text-zinc-300 leading-relaxed">
-                    Our certified power engineers in Owerri perform site visits, load audits, and tailored solar quotes.
-                  </p>
-                </div>
-
-                <div className="space-y-2 pt-4 relative z-10">
-                  <a
-                    href="https://wa.me/2349033333333?text=Hello%20Obifoks%20Global,%20I%20want%20a%20solar%20solution%20quote"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setSolutionsOpen(false)}
-                    className="w-full py-2.5 px-3 bg-[#459628] hover:bg-[#387a20] text-white text-xs font-bold rounded-lg text-center transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#459628]/20"
-                  >
-                    <PhoneCall className="w-3.5 h-3.5" />
-                    <span>WhatsApp Engineer</span>
-                  </a>
-
-                  <Link
-                    href="#contact"
-                    onClick={() => setSolutionsOpen(false)}
-                    className="w-full py-2.5 px-3 bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold rounded-lg text-center transition-all flex items-center justify-center gap-1.5 border border-white/10"
-                  >
-                    <span>Contact Us</span>
-                  </Link>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
+        />
       )}
 
       {/* Mobile Drawer Menu */}
@@ -424,20 +289,16 @@ export default function Header() {
                         >
                           All Solutions Overview →
                         </Link>
-                        {SOLUTIONS_DATA.map((sol) => {
-                          const IconComp = getSolutionIcon(sol.iconName);
-                          return (
-                            <Link
-                              key={sol.id}
-                              href={`/solutions/${sol.slug}`}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="flex items-center gap-2.5 py-1.5 text-xs text-zinc-300 hover:text-white"
-                            >
-                              <IconComp className="w-4 h-4 text-[#EE7130]" />
-                              <span>{sol.title}</span>
-                            </Link>
-                          );
-                        })}
+                        {SOLUTIONS_DATA.map((sol) => (
+                          <Link
+                            key={sol.id}
+                            href={`/solutions/${sol.slug}`}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block py-1.5 text-xs text-zinc-300 hover:text-white"
+                          >
+                            <span>{sol.title}</span>
+                          </Link>
+                        ))}
                       </div>
                     )}
                   </li>

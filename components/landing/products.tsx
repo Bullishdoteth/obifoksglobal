@@ -209,11 +209,18 @@ export default function Products() {
           <div className="bg-[#F3F4F6] p-1.5 rounded-full inline-flex flex-wrap items-center justify-center gap-1 sm:gap-2 max-w-full sm:max-w-4xl border border-zinc-200/60 shadow-inner">
             {productCategories.map((category, idx) => {
               const isActive = activeCategoryIndex === idx;
+              const visibilityClass =
+                idx < 3
+                  ? "inline-block"
+                  : idx === 3
+                  ? "hidden md:inline-block"
+                  : "hidden lg:inline-block";
+
               return (
                 <button
                   key={category.id}
                   onClick={() => handleCategorySelect(idx)}
-                  className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                  className={`${visibilityClass} px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                     isActive
                       ? "bg-[#091224] text-white shadow-md shadow-[#091224]/20 scale-100"
                       : "text-zinc-700 hover:text-zinc-950 hover:bg-zinc-200/60"

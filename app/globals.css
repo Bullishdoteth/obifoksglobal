@@ -8,8 +8,21 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-inter: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Unified Font Sizing System */
+  --text-xs: 0.75rem;       /* 12px - Badges, micro-copy, timestamps */
+  --text-sm: 0.875rem;      /* 14px - Captions, subtext, UI controls */
+  --text-base: 1rem;        /* 16px - Standard body paragraphs */
+  --text-lg: 1.125rem;      /* 18px - Lead text, card titles */
+  --text-xl: 1.25rem;       /* 20px - Section sub-headers, H4 */
+  --text-2xl: 1.5rem;       /* 24px - Section headers, H3 */
+  --text-3xl: 1.875rem;     /* 30px - Major section titles, H2 */
+  --text-4xl: 2.25rem;      /* 36px - Page titles, H1 */
+  --text-5xl: 3rem;         /* 48px - Main Hero display */
+  --text-6xl: 3.75rem;      /* 60px - Impact headlines */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,10 +32,18 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+
+  header, h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
 }
 
 @layer utilities {

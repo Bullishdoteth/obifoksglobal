@@ -43,22 +43,20 @@ export const metadata = {
 
 export default function SolutionsHubPage() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white flex flex-col selection:bg-[#EE7130] selection:text-white">
+    <main className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-[#EE7130] selection:text-white">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b border-white/10 bg-gradient-to-b from-black via-zinc-950 to-zinc-950">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#EE7130]/10 rounded-full blur-3xl pointer-events-none" />
-        
+      <section className="relative pt-12 pb-16 md:pt-20 md:pb-24 overflow-hidden border-b border-zinc-100 bg-gradient-to-b from-zinc-50 via-white to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div className="text-center max-w-3xl mx-auto space-y-4">
-            <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#EE7130]/10 border border-[#EE7130]/30 rounded-full text-xs font-semibold text-[#EE7130] uppercase tracking-wider">
-              <Zap className="w-3.5 h-3.5" /> Engineered Clean Energy
+            <span className="inline-flex items-center gap-2 px-3.5 py-1 bg-orange-50 border border-orange-200/80 rounded-full text-xs font-semibold text-[#EE7130] uppercase tracking-wider">
+              Engineered Clean Energy
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#0B1528] leading-tight">
               Tailored Power &amp; Renewable Solutions
             </h1>
-            <p className="text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed">
+            <p className="text-zinc-600 text-sm sm:text-base md:text-lg leading-relaxed">
               From residential homes to commercial complexes and industrial microgrids, Obifoks Global provides high-performance solar installations, lithium storage, surveillance, and street lighting.
             </p>
           </div>
@@ -69,10 +67,10 @@ export default function SolutionsHubPage() {
       <section className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1528] tracking-tight">
               Our 6 Core Energy Capabilities
             </h2>
-            <p className="text-zinc-400 text-xs sm:text-sm mt-1">
+            <p className="text-zinc-500 text-xs sm:text-sm mt-1">
               Select a solution to explore system specifications, sizing guides, and technical features.
             </p>
           </div>
@@ -84,28 +82,28 @@ export default function SolutionsHubPage() {
             return (
               <div
                 key={sol.id}
-                className="group bg-zinc-900/60 border border-white/10 rounded-2xl p-6 hover:border-[#EE7130]/50 hover:bg-zinc-900 transition-all duration-300 flex flex-col justify-between shadow-xl"
+                className="group bg-white border border-zinc-200/90 rounded-2xl p-6 hover:border-[#EE7130]/60 hover:shadow-xl hover:shadow-zinc-200/50 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 rounded-xl bg-[#EE7130]/10 text-[#EE7130] group-hover:bg-[#EE7130] group-hover:text-white transition-colors">
-                      <IconComponent className="w-6 h-6 stroke-[2]" />
+                    <div className="p-2.5 rounded-xl bg-orange-50 text-[#EE7130] border border-orange-100 group-hover:bg-[#EE7130] group-hover:text-white transition-colors">
+                      <IconComponent className="w-5 h-5 stroke-[2]" />
                     </div>
-                    <span className="text-[11px] font-bold px-2.5 py-1 bg-white/5 border border-white/10 text-zinc-300 rounded-full">
+                    <span className="text-[11px] font-bold px-2.5 py-1 bg-zinc-100 border border-zinc-200/80 text-zinc-700 rounded-full">
                       {sol.badge}
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#EE7130] transition-colors mb-2">
+                  <h3 className="text-xl font-bold text-[#0B1528] group-hover:text-[#EE7130] transition-colors mb-2">
                     {sol.title}
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed mb-4">
+                  <p className="text-xs text-zinc-600 leading-relaxed mb-4">
                     {sol.shortDesc}
                   </p>
 
-                  <div className="space-y-2 mb-6 pt-3 border-t border-white/5">
+                  <div className="space-y-2 mb-6 pt-3 border-t border-zinc-100">
                     {sol.keyFeatures.slice(0, 3).map((feat, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs text-zinc-300">
+                      <div key={idx} className="flex items-start gap-2 text-xs text-zinc-700">
                         <CheckCircle2 className="w-3.5 h-3.5 text-[#459628] shrink-0 mt-0.5" />
                         <span>{feat}</span>
                       </div>
@@ -115,7 +113,7 @@ export default function SolutionsHubPage() {
 
                 <Link
                   href={`/solutions/${sol.slug}`}
-                  className="w-full py-2.5 px-4 bg-zinc-800 hover:bg-[#EE7130] text-white text-xs font-bold rounded-xl text-center transition-all flex items-center justify-center gap-2 group/btn"
+                  className="w-full py-2.5 px-4 bg-[#0B1528] hover:bg-[#EE7130] text-white text-xs font-bold rounded-xl text-center transition-all flex items-center justify-center gap-2 group/btn shadow-sm"
                 >
                   <span>Explore {sol.title}</span>
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -127,54 +125,54 @@ export default function SolutionsHubPage() {
       </section>
 
       {/* Why Obifoks Global Section */}
-      <section className="py-16 bg-zinc-900/40 border-y border-white/10">
+      <section className="py-16 bg-zinc-50/70 border-y border-zinc-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1528]">
               Why Obifoks Global &amp; Felicity Nig. Ltd?
             </h2>
-            <p className="text-zinc-400 text-xs sm:text-sm mt-2">
+            <p className="text-zinc-600 text-xs sm:text-sm mt-2">
               We bring technical precision, Tier-1 solar equipment, and responsive local engineering support across Imo State and Nigeria.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-5 bg-zinc-900 border border-white/5 rounded-xl space-y-3">
-              <div className="p-2.5 w-max rounded-lg bg-[#EE7130]/10 text-[#EE7130]">
+            <div className="p-5 bg-white border border-zinc-200/80 rounded-xl space-y-3 shadow-sm">
+              <div className="p-2.5 w-max rounded-lg bg-orange-50 text-[#EE7130] border border-orange-100">
                 <Zap className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-sm text-white">Tier-1 Components</h4>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h4 className="font-bold text-sm text-[#0B1528]">Tier-1 Components</h4>
+              <p className="text-xs text-zinc-600 leading-relaxed">
                 Only genuine, high-efficiency solar panels, Felicity LiFePO4 batteries, and heavy-duty inverters.
               </p>
             </div>
 
-            <div className="p-5 bg-zinc-900 border border-white/5 rounded-xl space-y-3">
-              <div className="p-2.5 w-max rounded-lg bg-[#459628]/10 text-[#459628]">
+            <div className="p-5 bg-white border border-zinc-200/80 rounded-xl space-y-3 shadow-sm">
+              <div className="p-2.5 w-max rounded-lg bg-emerald-50 text-[#459628] border border-emerald-100">
                 <Wrench className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-sm text-white">Expert Sizing &amp; Audit</h4>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h4 className="font-bold text-sm text-[#0B1528]">Expert Sizing &amp; Audit</h4>
+              <p className="text-xs text-zinc-600 leading-relaxed">
                 Thorough load auditing and surge calculation to guarantee continuous power without system overloads.
               </p>
             </div>
 
-            <div className="p-5 bg-zinc-900 border border-white/5 rounded-xl space-y-3">
-              <div className="p-2.5 w-max rounded-lg bg-[#EE7130]/10 text-[#EE7130]">
+            <div className="p-5 bg-white border border-zinc-200/80 rounded-xl space-y-3 shadow-sm">
+              <div className="p-2.5 w-max rounded-lg bg-orange-50 text-[#EE7130] border border-orange-100">
                 <ShieldAlert className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-sm text-white">Full Manufacturer Warranty</h4>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h4 className="font-bold text-sm text-[#0B1528]">Full Manufacturer Warranty</h4>
+              <p className="text-xs text-zinc-600 leading-relaxed">
                 Up to 25-year performance warranties on panels and 5+ years on lithium battery installations.
               </p>
             </div>
 
-            <div className="p-5 bg-zinc-900 border border-white/5 rounded-xl space-y-3">
-              <div className="p-2.5 w-max rounded-lg bg-[#459628]/10 text-[#459628]">
+            <div className="p-5 bg-white border border-zinc-200/80 rounded-xl space-y-3 shadow-sm">
+              <div className="p-2.5 w-max rounded-lg bg-emerald-50 text-[#459628] border border-emerald-100">
                 <Headphones className="w-5 h-5" />
               </div>
-              <h4 className="font-bold text-sm text-white">Local Technical Support</h4>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h4 className="font-bold text-sm text-[#0B1528]">Local Technical Support</h4>
+              <p className="text-xs text-zinc-600 leading-relaxed">
                 Our Owerri technical office provides fast dispatch, preventive maintenance, and system health monitoring.
               </p>
             </div>
@@ -184,7 +182,7 @@ export default function SolutionsHubPage() {
 
       {/* CTA Consultation Section */}
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
-        <div className="bg-gradient-to-r from-zinc-900 via-zinc-900 to-[#0e2a18] border border-white/10 rounded-2xl p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl relative overflow-hidden">
+        <div className="bg-[#0B1528] text-white border border-zinc-800 rounded-2xl p-8 sm:p-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl relative overflow-hidden">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-bold text-[#EE7130] uppercase tracking-wider">
               Ready to Upgrade Your Energy?
@@ -192,7 +190,7 @@ export default function SolutionsHubPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
               Get a Customized Solar Sizing &amp; Quote Today
             </h2>
-            <p className="text-zinc-400 text-xs sm:text-sm">
+            <p className="text-zinc-300 text-xs sm:text-sm">
               Contact our energy engineers in Owerri to discuss your power load requirements and get an accurate system estimate.
             </p>
           </div>

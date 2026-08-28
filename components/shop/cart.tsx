@@ -86,12 +86,9 @@ export default function CartSidebar() {
           {/* 1. Header Section */}
           <div className="p-5 sm:p-6 bg-white border-b border-zinc-100 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-orange-50 text-[#EE7130] flex items-center justify-center font-bold">
-                <ShoppingBag className="w-5 h-5 stroke-[2.2]" />
-              </div>
               <div>
                 <h2 className="text-lg sm:text-xl font-extrabold text-[#0B1528] tracking-tight">
-                  Your Cart
+                  Cart
                 </h2>
                 <p className="text-xs text-zinc-500 font-medium">
                   {totalItems} {totalItems === 1 ? "item" : "items"} selected

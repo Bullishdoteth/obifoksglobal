@@ -147,19 +147,14 @@ export default function Brands() {
           </p>
         </div>
 
-        {/* Mobile View: Static Responsive Grid */}
-        <div className="grid md:hidden grid-cols-2 gap-4 items-center">
-          <BrandItems />
-        </div>
-
-        {/* Desktop View: Infinite Marquee with Pause on Hover */}
-        <div className="hidden md:block relative w-full overflow-hidden py-4">
+        {/* Infinite Marquee with Pause on Hover (Mobile & Desktop) */}
+        <div className="relative w-full overflow-hidden py-4">
           {/* Left & Right Edge Fades for Seamless Look */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
 
           {/* Marquee Track */}
-          <div className="animate-marquee flex items-center gap-6 lg:gap-8 hover:[animation-play-state:paused]">
+          <div className="animate-marquee flex items-center gap-4 sm:gap-6 lg:gap-8 hover:[animation-play-state:paused]">
             <BrandItems />
             <BrandItems />
             <BrandItems />
