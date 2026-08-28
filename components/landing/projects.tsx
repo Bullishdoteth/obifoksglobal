@@ -118,8 +118,7 @@ export default function Projects() {
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white text-black text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4">
-            <span className="w-2 h-2 rounded-full bg-[#378222]" />
-            SELECTED PROJECTS
+            NOTABLE PROJECTS
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
             Powering real businesses.
@@ -147,9 +146,6 @@ export default function Projects() {
               
               {/* Badge overlay */}
               <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-                <span className="bg-[#EE7130] text-white text-xs font-bold px-3 py-1.5 shadow-lg">
-                  FEATURED INSTALLATION
-                </span>
                 <span className="bg-emerald-500/90 text-white text-xs font-bold px-3 py-1.5 backdrop-blur-md">
                   100% OPERATIONAL
                 </span>
@@ -164,7 +160,7 @@ export default function Projects() {
                   <span className="font-semibold text-zinc-300">{featuredProject.location}</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4 group-hover:text-[#EE7130] transition-colors">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4 transition-colors">
                   {featuredProject.name}
                 </h3>
 
@@ -202,7 +198,7 @@ export default function Projects() {
               <div>
                 <button
                   onClick={() => setSelectedProject(featuredProject)}
-                  className="inline-flex items-center gap-2 bg-white hover:bg-zinc-100 text-zinc-950 font-bold text-sm px-6 py-3.5 transition-all duration-200 shadow-lg active:scale-95 group/btn"
+                  className="inline-flex items-center gap-2 bg-white cursor-pointer hover:bg-zinc-100 text-zinc-950 font-bold text-sm px-6 py-3.5 transition-all duration-200 shadow-lg active:scale-95 group/btn"
                 >
                   <span>View Project Details</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
@@ -220,11 +216,11 @@ export default function Projects() {
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="bg-zinc-950 border border-zinc-800 hover:border-[#EE7130]/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group cursor-pointer flex flex-col justify-between"
+              className="bg-zinc-950 border border-zinc-800 hover:border-zinc-800 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl group cursor-pointer flex flex-col justify-between"
             >
               <div>
                 {/* Thumbnail Image Header */}
-                <div className="relative h-44 w-full rounded-xl overflow-hidden mb-5 bg-zinc-900">
+                <div className="relative h-44 w-full overflow-hidden mb-5 bg-zinc-900">
                   <Image
                     src={project.image}
                     alt={project.name}
@@ -240,13 +236,13 @@ export default function Projects() {
                 </div>
 
                 {/* Title */}
-                <h4 className="text-xl font-bold text-white group-hover:text-[#EE7130] transition-colors mb-1">
+                <h4 className="text-xl font-bold text-white mb-1">
                   {project.name}
                 </h4>
                 <p className="text-zinc-400 text-xs font-medium mb-4">{project.category}</p>
 
                 {/* Key Spec Badge */}
-                <div className="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded-lg text-xs font-semibold text-zinc-200">
+                <div className="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 py-1.5 text-xs font-semibold text-zinc-200">
                   <Zap className="w-3.5 h-3.5 text-[#EE7130]" />
                   <span>{project.battery}</span>
                 </div>
@@ -254,8 +250,8 @@ export default function Projects() {
 
               {/* Card Footer Link */}
               <div className="mt-6 pt-4 border-t border-zinc-900 flex items-center justify-between text-xs font-bold text-zinc-400 group-hover:text-white transition-colors">
-                <span>Explore Specs</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#EE7130] transition-transform group-hover:translate-x-1" />
+                <span>Read more</span>
+                <ArrowRight className="w-3.5 h-3.5 text-white transition-transform group-hover:translate-x-1" />
               </div>
             </div>
           ))}
@@ -265,84 +261,108 @@ export default function Projects() {
 
       {/* Interactive Project Detail Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="bg-zinc-950 border border-zinc-800 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+          <div className="bg-zinc-950 border border-zinc-800 rounded-2xl sm:rounded-3xl max-w-5xl lg:max-w-6xl w-full max-h-[90vh] overflow-y-auto p-5 sm:p-8 relative shadow-2xl">
             
             {/* Close Button */}
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-5 right-5 w-10 h-10 rounded-full bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white flex items-center justify-center transition-colors z-20"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-zinc-900/90 hover:bg-zinc-800 text-zinc-400 hover:text-white flex items-center justify-center transition-colors z-30 cursor-pointer border border-zinc-800"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
-            {/* Modal Image */}
-            <div className="relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden mb-6 bg-zinc-900">
-              <Image
-                src={selectedProject.image}
-                alt={selectedProject.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 768px"
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-80" />
-              <div className="absolute bottom-4 left-4 z-10">
-                <span className="bg-[#EE7130] text-white text-xs font-bold px-3 py-1 rounded-full mb-2 inline-block">
-                  INSTALLED BY OBIFOKS
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white">{selectedProject.name}</h3>
-                <p className="text-zinc-300 text-xs sm:text-sm flex items-center gap-1.5 mt-1">
-                  <MapPin className="w-3.5 h-3.5 text-[#EE7130]" />
-                  {selectedProject.location}
-                </p>
-              </div>
-            </div>
-
-            {/* Summary */}
-            <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6">
-              {selectedProject.summary}
-            </p>
-
-            {/* Specifications Grid */}
-            <div className="mb-6">
-              <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">System Specifications</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {selectedProject.specs.map((spec, i) => (
-                  <div key={i} className="bg-zinc-900/80 border border-zinc-800 p-3.5 rounded-xl">
-                    <span className="text-xs text-zinc-400 block mb-0.5">{spec.label}</span>
-                    <span className="text-white text-sm font-bold">{spec.value}</span>
+            {/* 2-Column Responsive Layout: Stacked on Mobile (grid-cols-1), Side-by-Side on Desktop (lg:grid-cols-12) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+              
+              {/* Left Column (5/12): Modal Image & Header Details */}
+              <div className="lg:col-span-5 flex flex-col space-y-4">
+                <div className="relative h-64 sm:h-80 lg:h-[400px] w-full rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800/80">
+                  <Image
+                    src={selectedProject.image}
+                    alt={selectedProject.name}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 500px"
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-transparent opacity-90" />
+                  
+                  <div className="absolute bottom-4 left-4 right-4 z-10">
+                    <span className="bg-[#EE7130] text-white text-[11px] font-bold px-2.5 py-1 rounded-md mb-2 inline-block tracking-wide uppercase">
+                      {selectedProject.category}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-white leading-tight">{selectedProject.name}</h3>
+                    <p className="text-zinc-300 text-xs sm:text-sm flex items-center gap-1.5 mt-1.5 font-medium">
+                      <MapPin className="w-3.5 h-3.5 text-[#EE7130] shrink-0" />
+                      {selectedProject.location}
+                    </p>
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
 
-            {/* Key Impact Points */}
-            <div className="mb-8">
-              <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">Key Project Outcomes</h4>
-              <div className="space-y-2">
-                {selectedProject.impact.map((item, i) => (
-                  <div key={i} className="flex items-center gap-2.5 text-sm text-zinc-200 bg-zinc-900/40 p-2.5 rounded-lg border border-zinc-900">
-                    <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>{item}</span>
+                <div className="hidden lg:flex items-center gap-3 p-4 bg-zinc-900/60 border border-zinc-800/80 rounded-xl">
+                  <Zap className="w-5 h-5 text-[#EE7130] shrink-0" />
+                  <div>
+                    <span className="text-xs text-zinc-400 block font-semibold">Installed Battery Power</span>
+                    <span className="text-white text-sm font-bold">{selectedProject.battery}</span>
                   </div>
-                ))}
+                </div>
               </div>
-            </div>
 
-            {/* CTA in Modal */}
-            <div className="pt-4 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-xs text-zinc-400">
-                Want a similar power setup for your business?
+              {/* Right Column (7/12): Detailed Specs, Impact Outcomes, and Proposal CTA */}
+              <div className="lg:col-span-7 flex flex-col space-y-6">
+                
+                {/* Summary */}
+                <div>
+                  <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-2">Project Overview</h4>
+                  <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                    {selectedProject.summary}
+                  </p>
+                </div>
+
+                {/* Specifications Grid */}
+                <div>
+                  <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">System Specifications</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {selectedProject.specs.map((spec, i) => (
+                      <div key={i} className="bg-zinc-900/80 border border-zinc-800 p-3.5 rounded-xl">
+                        <span className="text-xs text-zinc-400 block mb-0.5">{spec.label}</span>
+                        <span className="text-white text-sm font-bold">{spec.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Key Impact Points */}
+                <div>
+                  <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3">Key Project Outcomes</h4>
+                  <div className="space-y-2">
+                    {selectedProject.impact.map((item, i) => (
+                      <div key={i} className="flex items-center gap-2.5 text-sm text-zinc-200 bg-zinc-900/40 p-2.5 rounded-lg border border-zinc-900">
+                        <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA in Modal */}
+                <div className="pt-4 border-t border-zinc-900 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+                  <div className="text-xs text-zinc-400">
+                    Want a similar power setup for your business?
+                  </div>
+                  <Link
+                    href="#contact"
+                    onClick={() => setSelectedProject(null)}
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#EE7130] hover:bg-[#d96224] text-white font-bold text-sm px-6 py-3 rounded-xl transition-all cursor-pointer shadow-lg"
+                  >
+                    <span>Request Project Proposal</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+
               </div>
-              <Link
-                href="#contact"
-                onClick={() => setSelectedProject(null)}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#EE7130] hover:bg-[#d96224] text-white font-bold text-sm px-6 py-3 rounded-xl transition-all"
-              >
-                <span>Request Project Proposal</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+
             </div>
 
           </div>

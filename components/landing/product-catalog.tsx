@@ -195,7 +195,7 @@ export default function ProductCatalog() {
         <div className="mt-14 sm:mt-20 text-center">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 hover:text-#2b661a] text-black text-sm font-bold transition-all duration-300 group"
+            className="inline-flex items-center gap-2 hover:text-[#2b661a] text-black text-sm font-bold transition-all duration-300 group"
           >
             <span>View All Products</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

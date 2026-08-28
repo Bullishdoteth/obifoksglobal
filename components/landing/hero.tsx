@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -32,16 +33,22 @@ export default function Hero() {
             We specialize in solar system installations, sales of panels, inverter and battery systems, solar maintenance, and affordable solar accessories, delivering clean energy across Nigeria
           </p>
 
-          {/* Contact Us Action Button */}
-          <div>
+          {/* Action Buttons Container */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center hover:bg-[#2b661a] bg-[#378222] text-white font-medium sm:font-semibold text-sm sm:text-base px-10 py-3 rounded-lg border border-white/20 shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-95"
+              className="inline-flex items-center justify-center bg-[#378222] hover:bg-[#2b661a] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-lg border border-white/20 shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-95 text-center"
             >
               Get a Quote
             </Link>
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-lg border border-white/20 backdrop-blur-sm shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-95 group text-center"
+            >
+              <span>View Products</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
           </div>
-
         </div>
       </div>
     </section>

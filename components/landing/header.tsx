@@ -54,7 +54,7 @@ export default function Header() {
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const ids = ["hero", "products", "solutions", "brands"];
+    const ids = ["hero", "products", "solutions", "projects", "contact"];
     const elements = ids
       .map((id) => document.getElementById(id))
       .filter(Boolean) as HTMLElement[];
@@ -69,7 +69,7 @@ export default function Header() {
           }
         });
       },
-      { rootMargin: "-20% 0px -60% 0px" }
+      { rootMargin: "-20% 0px -50% 0px" }
     );
 
     elements.forEach((el) => observer.observe(el));
@@ -108,16 +108,10 @@ export default function Header() {
   // Logic to determine if a nav item is genuinely active
   const isItemActive = (item: (typeof navItems)[0]) => {
     if (pathname === "/") {
-      if (activeSection === "products") {
-        return item.sectionId === "products";
+      if (activeSection && activeSection !== "hero") {
+        return item.sectionId === activeSection;
       }
-      if (activeSection === "solutions") {
-        return item.sectionId === "solutions";
-      }
-      if (activeSection === "hero" || !activeSection) {
-        return item.href === "/";
-      }
-      return false;
+      return item.href === "/" || item.sectionId === "hero";
     }
 
     // On non-root routes:
