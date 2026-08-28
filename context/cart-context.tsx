@@ -27,51 +27,26 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
+// Storage key for persisting cart items in browser
 const CART_STORAGE_KEY = "obifoks_cart_items_v1";
-
-// Default initial items so cart has sample items if empty or first visit
-const DEFAULT_ITEMS: CartItem[] = [
-  {
-    id: "felicity-m-175w-mono-solar-panel",
-    name: "Felicity M-175W MONO Solar Panel",
-    description: "175W Rated Power Monocrystalline Solar Panel",
-    image: "/assets/products/solar-panels.png",
-    quantity: 2,
-    category: "Solar Panels",
-    specs: ["175W Rated Power", "Monocrystalline Cells"]
-  },
-  {
-    id: "felicity-12-8v-200ah-lithium-lifepo4-battery",
-    name: "Felicity 12.8V 200Ah Lithium LiFePO4 Battery",
-    description: "2.56kWh Lithium Battery with built-in Smart BMS",
-    image: "/assets/products/batteries.png",
-    quantity: 1,
-    category: "Batteries",
-    specs: ["2.56kWh Capacity", "6000+ Cycle Life"]
-  }
-];
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isInitialized, setIsInitialized] = useState(false);
 
-  // Load from local storage or set default items on mount
+  // Load saved cart items from local storage on initial mount
   useEffect(() => {
     try {
       const stored = localStorage.getItem(CART_STORAGE_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
-        if (Array.isArray(parsed) && parsed.length > 0) {
+        if (Array.isArray(parsed)) {
           setItems(parsed);
-        } else {
-          setItems(DEFAULT_ITEMS);
         }
-      } else {
-        setItems(DEFAULT_ITEMS);
       }
     } catch {
-      setItems(DEFAULT_ITEMS);
+      setItems([]);
     } finally {
       setIsInitialized(true);
     }
