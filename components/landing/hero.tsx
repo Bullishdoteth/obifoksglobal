@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center py-20 sm:py-28 bg-zinc-950 overflow-hidden">
+    <section id="hero" className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center py-20 sm:py-28 bg-zinc-950 overflow-hidden">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image

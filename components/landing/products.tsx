@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, ShoppingBag } from "lucide-react";
+import { useCart } from "@/context/cart-context";
 
 interface ProductModel {
   name: string;
@@ -174,6 +175,7 @@ function FelicitySolarLogo() {
 export default function Products() {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [activeModelIndex, setActiveModelIndex] = useState(0);
+  const { addToCart } = useCart();
 
   const currentCategory = productCategories[activeCategoryIndex];
   const currentModel =
@@ -279,13 +281,29 @@ export default function Products() {
                 </div>
               )}
 
-              {/* View More Primary Button */}
-              <div className="pt-2">
+              {/* Action Buttons: Add to Cart & View More */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() =>
+                    addToCart({
+                      id: currentModel.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+                      name: currentModel.name,
+                      description: currentModel.description,
+                      image: currentModel.image,
+                      category: currentCategory.name,
+                      specs: currentModel.specs,
+                    })
+                  }
+                  className="inline-flex items-center gap-2.5 bg-[#EE7130] hover:bg-[#d9581c] text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-md shadow-[#EE7130]/30 hover:shadow-lg hover:shadow-[#EE7130]/40 hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer"
+                >
+                  <ShoppingBag className="w-4 h-4 stroke-[2.2]" />
+                  <span>Add to Cart</span>
+                </button>
                 <a
                   href="#quote"
-                  className="inline-flex items-center gap-2.5 bg-[#EE7130] hover:bg-[#d9581c] text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-md shadow-[#EE7130]/30 hover:shadow-lg hover:shadow-[#EE7130]/40 hover:-translate-y-0.5 active:translate-y-0 group"
+                  className="inline-flex items-center gap-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-sm sm:text-base font-semibold px-5 py-3 rounded-xl transition-all duration-300"
                 >
-                  <span>View more</span>
+                  <span>Request Quote</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>

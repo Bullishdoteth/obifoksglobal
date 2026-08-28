@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import ConsentBanner from "@/components/consentBanner";
+import { CartProvider } from "@/context/cart-context";
+import CartSidebar from "@/components/shop/cart";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -21,17 +23,23 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <CartProvider>
+          {children}
+          <CartSidebar />
+        </CartProvider>
         <ConsentBanner />
       </body>
     </html>
   );
 }
-
