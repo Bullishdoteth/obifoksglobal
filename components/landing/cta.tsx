@@ -29,14 +29,6 @@ export default function CTA() {
 
           {/* Action Buttons */}
           <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full">
-            <Link
-              href="#contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#378222] hover:bg-[#2b661a] text-white font-bold text-sm px-8 py-4 transition-all duration-200 shadow-xl shadow-emerald-950/40 hover:scale-[1.02] active:scale-95 group"
-            >
-              <span>Get a Free Quote</span>
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-
             <a
               href="https://wa.me/2349064566983"
               target="_blank"

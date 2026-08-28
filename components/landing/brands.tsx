@@ -4,7 +4,7 @@ import Image from "next/image";
 function MaxwellLogo() {
   return (
     <div className="flex items-center gap-2.5 select-none">
-      <svg className="w-8 h-8 text-[#ff3b00]" viewBox="0 0 36 36" fill="none">
+      <svg className="w-8 h-8 text-zinc-950" viewBox="0 0 36 36" fill="none">
         <path
           d="M6 28L13 8L18 20L23 8L30 28H24.5L20.5 15.5L18 22.5L15.5 15.5L11.5 28H6Z"
           fill="currentColor"
@@ -12,10 +12,10 @@ function MaxwellLogo() {
         <circle cx="18" cy="6" r="2.5" fill="#18181b" />
       </svg>
       <div className="flex flex-col">
-        <span className="text-zinc-900 font-extrabold text-base sm:text-lg tracking-wider leading-none">
+        <span className="text-zinc-950 font-black text-sm sm:text-base tracking-wider leading-none">
           MAXWELL
         </span>
-        <span className="text-zinc-400 font-bold text-[9px] tracking-widest uppercase">
+        <span className="text-zinc-400 font-semibold text-[9px] tracking-widest uppercase mt-0.5">
           ENERGY
         </span>
       </div>
@@ -27,7 +27,7 @@ function MaxwellLogo() {
 function DeleHiesecLogo() {
   return (
     <div className="flex items-center gap-2.5 select-none">
-      <svg className="w-8 h-8 text-zinc-900" viewBox="0 0 36 36" fill="none">
+      <svg className="w-8 h-8 text-zinc-950" viewBox="0 0 36 36" fill="none">
         <path
           d="M18 4L30 11V25L18 32L6 25V11L18 4Z"
           stroke="currentColor"
@@ -36,14 +36,14 @@ function DeleHiesecLogo() {
         />
         <path
           d="M14 12H20C22.2 12 23.5 13.3 23.5 15.2C23.5 17.1 22.2 18.4 20 18.4H14V12ZM14 18.4H21C23.2 18.4 24.5 19.7 24.5 21.6C24.5 23.5 23.2 24.8 21 24.8H14V18.4Z"
-          fill="#ff3b00"
+          fill="currentColor"
         />
       </svg>
       <div className="flex flex-col">
-        <span className="text-zinc-900 font-extrabold text-sm sm:text-base tracking-wider leading-none">
+        <span className="text-zinc-950 font-black text-sm sm:text-base tracking-wider leading-none">
           DELE HIESEC
         </span>
-        <span className="text-zinc-400 font-semibold text-[9px] tracking-widest uppercase">
+        <span className="text-zinc-400 font-semibold text-[9px] tracking-widest uppercase mt-0.5">
           INTERNATIONAL
         </span>
       </div>
@@ -55,7 +55,7 @@ function DeleHiesecLogo() {
 function ExaltedLogo() {
   return (
     <div className="flex items-center gap-2.5 select-none">
-      <svg className="w-8 h-8 text-[#ff3b00]" viewBox="0 0 36 36" fill="none">
+      <svg className="w-8 h-8 text-zinc-950" viewBox="0 0 36 36" fill="none">
         <path
           d="M18 2L22.5 13.5L34 18L22.5 22.5L18 34L13.5 22.5L2 18L13.5 13.5L18 2Z"
           fill="currentColor"
@@ -63,10 +63,10 @@ function ExaltedLogo() {
         <circle cx="18" cy="18" r="4" fill="#ffffff" />
       </svg>
       <div className="flex flex-col">
-        <span className="text-zinc-900 font-black text-base sm:text-lg tracking-widest leading-none">
+        <span className="text-zinc-950 font-black text-sm sm:text-base tracking-wider leading-none">
           EXALTED
         </span>
-        <span className="text-zinc-400 font-medium text-[9px] tracking-widest uppercase">
+        <span className="text-zinc-400 font-semibold text-[9px] tracking-widest uppercase mt-0.5">
           POWER TECH
         </span>
       </div>
@@ -129,17 +129,14 @@ function BrandItems() {
 
 export default function Brands() {
   return (
-    <section className="py-16 sm:py-24 bg-white border-y border-zinc-100 overflow-hidden">
+    <section className="py-20 sm:py-28 lg:py-32 bg-white border-y border-zinc-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#ff3b00]" />
-            <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#378222]">
-              TRUSTED PARTNERS
-            </span>
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white text-xs font-extrabold uppercase tracking-widest">
+            <span>TRUSTED PARTNERS</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-zinc-900 tracking-tight mb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-950 tracking-tight leading-tight">
             Brands We Work With
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base font-normal leading-relaxed">
