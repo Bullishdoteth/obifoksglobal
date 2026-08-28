@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center py-20 sm:py-28 px-4 sm:px-6 lg:px-12 bg-zinc-950 overflow-hidden">
+    <section className="relative w-full min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-center py-20 sm:py-28 bg-zinc-950 overflow-hidden">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -18,7 +18,7 @@ export default function Hero() {
       </div>
 
       {/* Hero Content Area */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full py-8 sm:py-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full py-8 sm:py-12">
         <div className="max-w-4xl text-left">
           
           {/* Main Headline */}
@@ -35,9 +35,9 @@ export default function Hero() {
           <div>
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center bg-[#429629] hover:bg-[#378222] text-white font-medium sm:font-semibold text-sm sm:text-base px-7 py-3 rounded-lg border border-white/20 shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-95"
+              className="inline-flex items-center justify-center bg-[#EE7130] hover:bg-[#378222] text-white font-medium sm:font-semibold text-sm sm:text-base px-7 py-3 rounded-lg border border-white/20 shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-95"
             >
-              Contact Us
+              Get a Quote
             </Link>
           </div>
 

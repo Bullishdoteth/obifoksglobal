@@ -18,19 +18,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12">
           {/* Column 1: Logo & Info */}
           <div className="lg:col-span-1 space-y-4">
-            <Link href="/" className="flex items-center group">
-              <div className="flex items-center gap-3 select-none transition-transform">
-                {/* Brand Wordmark */}
-                <Link href="/" className="flex items-center gap-3 group">
-        <div className="flex flex-col">
-          <span className="text-white font-extrabold text-base sm:text-lg md:text-xl tracking-tight leading-none">
-            OBIFOKS <span className="text-[#EE7130]">GLOBAL</span>
-          </span>
-          <span className="text-zinc-400 font-bold text-[9px] sm:text-[10px] tracking-[0.2em] uppercase leading-tight pt-0.5">
-            &amp; FELICITY NIG. LTD.
-          </span>
-        </div>
-      </Link>
+            <Link href="/" className="flex items-center gap-3 group select-none transition-transform">
+              <div className="flex flex-col">
+                <span className="text-white font-extrabold text-base sm:text-lg md:text-xl tracking-tight leading-none">
+                  OBIFOKS <span className="text-[#EE7130]">GLOBAL</span>
+                </span>
+                <span className="text-zinc-400 font-bold text-[9px] sm:text-[10px] tracking-[0.2em] uppercase leading-tight pt-0.5">
+                  &amp; FELICITY NIG. LTD.
+                </span>
               </div>
             </Link>
             <p className="text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[260px] pt-1">

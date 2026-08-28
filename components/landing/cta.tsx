@@ -4,8 +4,9 @@ import { ArrowRight } from "lucide-react";
 
 export default function CTA() {
   return (
-    <section className="relative py-20 sm:py-28 px-4 sm:px-8 lg:px-16 bg-white overflow-hidden flex items-center justify-center">
-      <div className="max-w-4xl w-full mx-auto relative rounded-2xl sm:rounded-3xl overflow-hidden py-10 sm:py-12 px-6 sm:px-12 flex items-center justify-center shadow-2xl border border-zinc-200/40">
+    <section className="relative py-20 sm:py-28 bg-white overflow-hidden flex items-center justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full">
+        <div className="max-w-4xl w-full mx-auto relative rounded-2xl sm:rounded-3xl overflow-hidden py-10 sm:py-12 px-6 sm:px-12 flex items-center justify-center shadow-2xl border border-zinc-200/40">
         
         {/* Background Image */}
         <Image
@@ -63,8 +64,8 @@ export default function CTA() {
           </div>
 
         </div>
-
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }

@@ -185,8 +185,8 @@ export default function Products() {
   };
 
   return (
-    <section id="products" className="scroll-mt-20 py-16 sm:py-24 px-4 sm:px-6 lg:px-12 bg-white border-b border-zinc-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section id="products" className="scroll-mt-20 py-16 sm:py-24 bg-white border-b border-zinc-100 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">

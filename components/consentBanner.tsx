@@ -27,8 +27,8 @@ export default function ConsentBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0a0f18] text-white py-4 px-6 sm:px-10 lg:px-16 border-t border-zinc-800/60 shadow-2xl transition-all animate-in fade-in slide-in-from-bottom-5 duration-300">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-xs sm:text-sm text-zinc-300">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#0a0f18] text-white py-4 border-t border-zinc-800/60 shadow-2xl transition-all animate-in fade-in slide-in-from-bottom-5 duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 text-xs sm:text-sm text-zinc-300">
         <p className="leading-relaxed text-center md:text-left flex-1">
           We use cookies to improve your experience, analyse traffic, and serve personalised ads via Google AdSense. By clicking &quot;Accept&quot;, you consent to our use of cookies.{" "}
           <Link href="/privacy" className="text-[#ff5500] hover:underline underline-offset-2 font-medium">
