@@ -35,7 +35,7 @@ export default function Hero() {
           <div>
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center bg-[#EE7130] hover:bg-[#378222] text-white font-medium sm:font-semibold text-sm sm:text-base px-7 py-3 rounded-lg border border-white/20 shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-95"
+              className="inline-flex items-center justify-center hover:bg-[#2b661a] bg-[#378222] text-white font-medium sm:font-semibold text-sm sm:text-base px-10 py-3 rounded-lg border border-white/20 shadow-xl transition-all duration-200 hover:scale-[1.02] active:scale-95"
             >
               Get a Quote
             </Link>
