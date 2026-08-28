@@ -22,8 +22,8 @@ export default function Hero() {
         <div className="max-w-4xl text-left">
           
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.08] mb-6 sm:mb-8 drop-shadow-md">
-            Reliable Solar Energy Solutions for Homes &amp; Businesses in Nigeria
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.08] mb-6 sm:mb-8 drop-shadow-md">
+            Reliable Solar Energy Solutions
           </h1>
 
           {/* Subtitle */}
