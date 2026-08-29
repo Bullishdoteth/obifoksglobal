@@ -86,7 +86,7 @@ export default function MegaMenu({ onClose, onMouseEnter, onMouseLeave }: MegaMe
 
             <div className="space-y-2 pt-4 relative z-10">
               <a
-                href="https://wa.me/2349033333333?text=Hello%20Obifoks%20Global,%20I%20want%20a%20solar%20solution%20quote"
+                href="https://wa.me/2348026640279?text=Hello%20Obifoks%20Global,%20I%20want%20a%20solar%20solution%20quote"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={onClose}

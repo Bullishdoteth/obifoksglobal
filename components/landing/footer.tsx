@@ -162,7 +162,7 @@ export default function Footer() {
                     0802 664 0279
                   </a>
                   <a href="tel:09111709721" className="hover:text-white transition-colors">
-                    09111709721
+                    0911 170 9721
                   </a>
                 </div>
               </li>

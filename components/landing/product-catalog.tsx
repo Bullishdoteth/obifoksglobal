@@ -116,7 +116,7 @@ export default function ProductCatalog() {
     const text = encodeURIComponent(
       `Hello Obifoks Global! I want to inquire about purchasing:\n\n*Product:* ${product.name}\n*Price:* ${product.price}\n*Category:* ${product.category}\n\nPlease confirm availability and delivery options.`
     );
-    return `https://wa.me/2348033000000?text=${text}`;
+    return `https://wa.me/2348026640279?text=${text}`;
   };
 
   return (

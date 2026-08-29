@@ -95,7 +95,7 @@ export default function ProductsClientView() {
     const text = encodeURIComponent(
       `Hello Obifoks Global! I am interested in inquiring about the following product:\n\n*Product:* ${product.name}\n*Model:* ${product.modelCode}\n*Category:* ${product.categoryName}\n\nPlease provide current pricing, stock availability in Owerri, and delivery details.`
     );
-    return `https://wa.me/2349064566983?text=${text}`;
+    return `https://wa.me/2348026640279?text=${text}`;
   };
 
   return (

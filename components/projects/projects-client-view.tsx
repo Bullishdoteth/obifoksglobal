@@ -47,7 +47,7 @@ export default function ProjectsClientView() {
     const text = encodeURIComponent(
       "Hello Obifoks Global! I am looking to consult with your engineering team regarding a custom solar and energy storage project for my business."
     );
-    return `https://wa.me/2349064566983?text=${text}`;
+    return `https://wa.me/2348026640279?text=${text}`;
   };
 
   return (

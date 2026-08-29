@@ -92,7 +92,7 @@ export default function SolutionDetailView({ solution }: Props) {
               {/* Action buttons */}
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href={`https://wa.me/2349064566983?text=${whatsappMessage}`}
+                  href={`https://wa.me/2348026640279?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="py-3.5 px-6 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shadow-md"
@@ -237,7 +237,7 @@ export default function SolutionDetailView({ solution }: Props) {
               <span>Back to Solutions</span>
             </Link>
             <a
-              href={`https://wa.me/2349064566983?text=${whatsappMessage}`}
+              href={`https://wa.me/2348026640279?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
               className="py-3.5 px-6 bg-[#378222] hover:bg-[#2b661a] text-white text-xs font-bold text-center transition-all cursor-pointer"

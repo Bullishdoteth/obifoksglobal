@@ -82,14 +82,14 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
     const text = encodeURIComponent(
       `Hello Obifoks Global! I am reviewing your project page for *${project.clientName}* (${project.batteryCapacity}, ${project.location}).\n\nI would like to request an engineering consultation and quote for a similar solar setup for my facility in Nigeria.`
     );
-    return `https://wa.me/2349064566983?text=${text}`;
+    return `https://wa.me/2348026640279?text=${text}`;
   };
 
   const getGeneralWhatsAppLink = () => {
     const text = encodeURIComponent(
       "Hello Obifoks Global! I am looking to consult with your engineering team regarding a custom solar and energy storage project for my business."
     );
-    return `https://wa.me/2349064566983?text=${text}`;
+    return `https://wa.me/2348026640279?text=${text}`;
   };
 
   return (

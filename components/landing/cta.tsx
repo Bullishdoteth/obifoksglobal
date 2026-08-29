@@ -30,7 +30,7 @@ export default function CTA() {
           {/* Action Buttons */}
           <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 w-full">
             <a
-              href="https://wa.me/2349064566983"
+              href="https://wa.me/2348026640279"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-8 py-4 transition-all duration-200 shadow-xl shadow-green-950/40 hover:scale-[1.02] active:scale-95 group"

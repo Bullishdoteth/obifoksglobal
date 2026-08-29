@@ -50,7 +50,7 @@ export default function CartSidebar() {
   if (!isOpen) return null;
 
   // Construct WhatsApp order message link
-  const phoneNumbers = "2349064566983"; // Obifoks Global primary contact
+  const phoneNumbers = "2348026640279"; // Obifoks Global primary contact
   const messageHeader = `Hello Obifoks Global 👋,\n\nI would like to order the following item(s) from your website:\n\n`;
   const itemsText = items
     .map(

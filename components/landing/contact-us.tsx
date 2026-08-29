@@ -37,7 +37,7 @@ export default function ContactUs() {
 
       const message = `Hello Obifoks Global! I would like to request a quote.\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Requirement:* ${formData.requirement || "Not specified"}`;
       
-      const whatsappUrl = `https://wa.me/2349064566983?text=${encodeURIComponent(message)}`;
+      const whatsappUrl = `https://wa.me/2348026640279?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, "_blank");
     }, 600);
   };

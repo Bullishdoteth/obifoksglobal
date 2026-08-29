@@ -227,7 +227,7 @@ export default function SolutionsHubPage() {
               Contact Us for Quote
             </Link>
             <a
-              href="https://wa.me/2349064566983?text=Hello%20Obifoks%20Global,%20I%20want%20a%20solar%20solution%20quote"
+              href="https://wa.me/2348026640279?text=Hello%20Obifoks%20Global,%20I%20want%20a%20solar%20solution%20quote"
               target="_blank"
               rel="noopener noreferrer"
               className="py-3.5 px-6 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold text-center transition-all"
