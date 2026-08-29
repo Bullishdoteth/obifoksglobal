@@ -119,7 +119,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
 
             <Link
               href="/projects"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-700 hover:text-zinc-950 transition-colors"
+              className="md:inline-flex hidden items-center gap-1.5 text-xs font-bold text-zinc-700 hover:text-zinc-950 transition-colors"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to All Projects</span>

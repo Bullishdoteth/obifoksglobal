@@ -34,7 +34,7 @@ export default function CompanyValues() {
         {/* Header */}
         <div className="flex flex-col items-start max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white text-xs font-semibold tracking-wider uppercase mb-4">
-            <Award className="w-3.5 h-3.5 text-[#EE7130]" />
+            <Award className="w-3.5 h-3.5 text-white" />
             <span>Why Trust Obifoks Global</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">

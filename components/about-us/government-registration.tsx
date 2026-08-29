@@ -22,7 +22,7 @@ export default function GovernmentRegistration() {
         {/* Header */}
         <div className="flex flex-col items-start max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white text-xs font-semibold tracking-wider uppercase mb-4">
-            <FileCheck className="w-3.5 h-3.5 text-[#EE7130]" />
+            <FileCheck className="w-3.5 h-3.5 text-white" />
             <span>Government Registration &amp; Legal Credentials</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">
@@ -55,13 +55,13 @@ export default function GovernmentRegistration() {
 
               {/* Hover Zoom Overlay Badge */}
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-bold text-xs uppercase tracking-wider">
-                <Maximize2 className="w-4 h-4 text-[#EE7130]" />
+                <Maximize2 className="w-4 h-4 text-[#2b661a]" />
                 <span>Click to Expand Certificate</span>
               </div>
 
               {/* Top Certificate Stamp */}
               <div className="absolute top-4 left-4 bg-black/90 text-white text-[10px] font-mono font-bold px-2.5 py-1 border border-zinc-700 flex items-center gap-1.5 shadow-md">
-                <span className="w-2 h-2 rounded-full bg-[#EE7130]"></span>
+                <span className="w-2 h-2 rounded-full bg-[#2b661a]"></span>
                 <span>RC NO. 7711574</span>
               </div>
             </div>
@@ -70,17 +70,17 @@ export default function GovernmentRegistration() {
               <span>Verified CAC Document</span>
               <button
                 onClick={() => setIsModalOpen(true)}
-                className="text-xs font-bold text-zinc-900 hover:text-[#EE7130] flex items-center gap-1 cursor-pointer"
+                className="text-xs font-bold text-zinc-900 hover:text-[#2b661a] flex items-center gap-1 cursor-pointer"
               >
-                <Maximize2 className="w-3.5 h-3.5 text-[#EE7130]" /> View High-Res
+                <Maximize2 className="w-3.5 h-3.5 text-[#2b661a]" /> View High-Res
               </button>
             </div>
           </div>
 
           {/* Right Column (7/12): Main Legal Entity Specs Card */}
-          <div className="lg:col-span-7 bg-white border border-zinc-200 p-6 sm:p-8 space-y-6 shadow-sm relative overflow-hidden">
+          <div className="lg:col-span-7 space-x-6 bg-white border border-zinc-200 p-6 sm:p-8 space-y-6 shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 p-6 opacity-[0.03] pointer-events-none">
-              <Building className="w-48 h-48 text-zinc-950" />
+              <Building className="w-48 h-48 text-zinc-20" />
             </div>
 
             {/* Entity Name & Active Status */}
@@ -93,8 +93,8 @@ export default function GovernmentRegistration() {
                   OBIFOKS GLOBAL &amp; FELICITY NIG. LTD.
                 </h3>
               </div>
-              <span className="shrink-0 w-fit px-3 py-1.5 bg-orange-50 border border-orange-200 text-[#EE7130] text-xs font-bold flex items-center gap-1.5 uppercase tracking-wider">
-                <CheckCircle2 className="w-3.5 h-3.5 text-[#EE7130]" />
+              <span className="shrink-0 w-fit px-3 py-1.5 bg-[#2b661a]/50 text-[#2b661a] text-xs font-bold flex items-center gap-1.5 uppercase tracking-wider">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#2b661a]" />
                 Active Entity
               </span>
             </div>
@@ -144,7 +144,7 @@ export default function GovernmentRegistration() {
                 Registered Corporate Headquarters
               </span>
               <div className="flex items-start gap-3.5 text-sm text-zinc-700 bg-zinc-50 p-4 border border-zinc-200">
-                <MapPin className="w-5 h-5 text-[#EE7130] shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-[#2b661a] shrink-0 mt-0.5" />
                 <div className="space-y-0.5 leading-snug">
                   <p className="font-bold text-zinc-950 text-base">No. 6 Wetheral Road</p>
                   <p className="text-zinc-700 text-xs sm:text-sm font-medium">Opposite Polaris Bank, Government Roundabout</p>
@@ -167,7 +167,7 @@ export default function GovernmentRegistration() {
             {/* Compliance Item 1 */}
             <div className="bg-zinc-50 border border-zinc-200 p-6 flex flex-col justify-between space-y-3">
               <div className="p-3 bg-black text-white w-fit">
-                <Award className="w-5 h-5 text-[#EE7130]" />
+                <Award className="w-5 h-5 text-[#2b661a]" />
               </div>
               <div>
                 <h4 className="text-base font-extrabold text-zinc-950 mb-1">SON Equipment Certification</h4>
@@ -180,7 +180,7 @@ export default function GovernmentRegistration() {
             {/* Compliance Item 2 */}
             <div className="bg-zinc-50 border border-zinc-200 p-6 flex flex-col justify-between space-y-3">
               <div className="p-3 bg-black text-white w-fit">
-                <ShieldCheck className="w-5 h-5 text-[#EE7130]" />
+                <ShieldCheck className="w-5 h-5 text-[#2b661a]" />
               </div>
               <div>
                 <h4 className="text-base font-extrabold text-zinc-950 mb-1">NEMSA Electrical Safety</h4>
@@ -193,7 +193,7 @@ export default function GovernmentRegistration() {
             {/* Compliance Item 3 */}
             <div className="bg-zinc-50 border border-zinc-200 p-6 flex flex-col justify-between space-y-3">
               <div className="p-3 bg-black text-white w-fit">
-                <CheckCircle2 className="w-5 h-5 text-[#EE7130]" />
+                <CheckCircle2 className="w-5 h-5 text-[#2b661a]" />
               </div>
               <div>
                 <h4 className="text-base font-extrabold text-zinc-950 mb-1">Authorized Felicity Representative</h4>

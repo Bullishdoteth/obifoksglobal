@@ -8,7 +8,7 @@ export default function AboutHero() {
         <div className="max-w-3xl space-y-6">
           {/* Top Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white text-xs font-semibold tracking-wider uppercase">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#EE7130]" />
+            <ShieldCheck className="w-3.5 h-3.5 text-white" />
             <span>Official Corporate Profile</span>
           </div>
 
@@ -49,7 +49,7 @@ export default function AboutHero() {
                 <Award className="w-4 h-4" />
               </div>
             </div>
-            <div className="text-2xl sm:text-3xl font-black text-zinc-950">10+ Years</div>
+            <div className="text-2xl sm:text-3xl font-black text-zinc-950">1+ Years</div>
             <p className="text-xs text-zinc-500 font-medium mt-1">In Power &amp; Renewable Systems</p>
           </div>
 
@@ -57,7 +57,7 @@ export default function AboutHero() {
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs uppercase font-bold tracking-wider text-zinc-400">Installations</span>
               <div className="p-2 bg-black text-white">
-                <Zap className="w-4 h-4 text-[#EE7130]" />
+                <Zap className="w-4 h-4 text-white" />
               </div>
             </div>
             <div className="text-2xl sm:text-3xl font-black text-zinc-950">1,500+</div>
@@ -68,7 +68,7 @@ export default function AboutHero() {
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs uppercase font-bold tracking-wider text-zinc-400">Status</span>
               <div className="p-2 bg-black text-white">
-                <Building2 className="w-4 h-4 text-[#EE7130]" />
+                <Building2 className="w-4 h-4 text-white" />
               </div>
             </div>
             <div className="text-2xl sm:text-3xl font-black text-zinc-950">CAC Entity</div>
@@ -79,7 +79,7 @@ export default function AboutHero() {
             <div className="flex items-center justify-between mb-3">
               <span className="text-xs uppercase font-bold tracking-wider text-zinc-400">Support</span>
               <div className="p-2 bg-black text-white">
-                <ShieldCheck className="w-4 h-4 text-[#EE7130]" />
+                <ShieldCheck className="w-4 h-4 text-white" />
               </div>
             </div>
             <div className="text-2xl sm:text-3xl font-black text-zinc-950">24/7 Field</div>
