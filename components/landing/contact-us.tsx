@@ -240,7 +240,6 @@ export default function ContactUs() {
                       What do you need?
                     </label>
                     <div className="relative">
-                      <MessageSquare className="w-4 h-4 text-zinc-500 absolute left-4 top-4" />
                       <textarea
                         id="quote-requirement"
                         rows={4}
