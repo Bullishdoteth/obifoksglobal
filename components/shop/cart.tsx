@@ -139,10 +139,10 @@ export default function CartSidebar() {
               items.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-white rounded-xl p-3 border border-zinc-200/70 flex items-center gap-3 transition-all"
+                  className="bg-white p-3 border border-zinc-200/70 flex items-center gap-3 transition-all"
                 >
                   {/* Thumbnail */}
-                  <div className="relative w-14 h-14 rounded-lg bg-zinc-50 p-1 shrink-0 border border-zinc-100 flex items-center justify-center">
+                  <div className="relative w-14 h-14 bg-zinc-50 p-1 shrink-0 border border-zinc-100 flex items-center justify-center">
                     <Image
                       src={item.image}
                       alt={item.name}
@@ -208,7 +208,7 @@ export default function CartSidebar() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold text-xs sm:text-sm py-3 px-4 rounded-xl transition-all text-center shadow-sm"
+                className="w-full inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold text-xs sm:text-sm py-3 px-4 transition-all text-center shadow-sm"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-current shrink-0" />
                 <span>Order via WhatsApp</span>
@@ -216,7 +216,7 @@ export default function CartSidebar() {
             ) : (
               <button
                 disabled
-                className="w-full inline-flex items-center justify-center gap-2 bg-zinc-100 text-zinc-400 font-medium text-xs sm:text-sm py-3 px-4 rounded-xl cursor-not-allowed text-center"
+                className="w-full inline-flex items-center justify-center gap-2 bg-zinc-100 text-zinc-400 font-medium text-xs sm:text-sm py-3 px-4 cursor-not-allowed text-center"
               >
                 <WhatsAppIcon className="w-4 h-4 fill-current shrink-0" />
                 <span>Order via WhatsApp</span>
