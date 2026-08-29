@@ -59,7 +59,7 @@ export default function WhyObifoks() {
 
           <p className="text-zinc-700 text-lg sm:text-xl md:text-2xl font-medium leading-relaxed max-w-3xl">
             We don&apos;t just sell equipment. <br className="hidden sm:inline" />
-            <span className="text-[#378222] font-bold">We help you keep it working.</span>
+            <span className="text-[#EE7130] font-bold">We help you keep it working.</span>
           </p>
         </div>
 

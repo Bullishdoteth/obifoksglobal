@@ -48,7 +48,7 @@ export default function SolutionDetailView({ solution }: Props) {
   );
 
   return (
-    <main className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-[#EE7130] selection:text-white">
+    <main className="min-h-screen bg-white text-zinc-900 flex flex-col selection:bg-zinc-900 selection:text-white">
       <Header />
 
       <PageHeader
@@ -62,24 +62,26 @@ export default function SolutionDetailView({ solution }: Props) {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-12 pb-16 md:pt-16 md:pb-20 border-b border-zinc-200/80 bg-gradient-to-b from-zinc-50 via-white to-white overflow-hidden">
+      <section className="relative py-14 sm:py-20 border-b border-zinc-200/80 bg-zinc-50/50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10">
+            
+            {/* Left Content */}
             <div className="max-w-3xl space-y-4">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-xl bg-orange-50 text-[#EE7130] border border-orange-200/80">
-                  <IconComponent className="w-6 h-6 stroke-[2]" />
+                <div className="p-3 bg-zinc-950 text-white">
+                  <IconComponent className="w-5 h-5 stroke-[2]" />
                 </div>
-                <span className="px-3 py-1 bg-orange-50 border border-orange-200/80 rounded-full text-xs font-bold text-[#EE7130] uppercase tracking-wider">
+                <span className="px-3 py-1 bg-zinc-100 border border-zinc-200 text-xs font-bold text-zinc-700 uppercase tracking-wider">
                   {solution.badge}
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0B1528] tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-zinc-950 tracking-tight leading-tight">
                 {solution.title}
               </h1>
 
-              <p className="text-lg sm:text-xl font-semibold text-[#EE7130]">
+              <p className="text-base sm:text-lg font-bold text-[#378222]">
                 {solution.subtitle}
               </p>
 
@@ -90,17 +92,17 @@ export default function SolutionDetailView({ solution }: Props) {
               {/* Action buttons */}
               <div className="flex flex-wrap gap-4 pt-4">
                 <a
-                  href={`https://wa.me/2349033333333?text=${whatsappMessage}`}
+                  href={`https://wa.me/2349064566983?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="py-3 px-6 bg-[#459628] hover:bg-[#387a20] text-white text-xs sm:text-sm font-bold rounded-xl transition-all flex items-center gap-2 shadow-md shadow-[#459628]/20"
+                  className="py-3.5 px-6 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shadow-md"
                 >
                   <PhoneCall className="w-4 h-4" />
                   <span>Request Sizing &amp; Quote on WhatsApp</span>
                 </a>
                 <Link
                   href="/contact"
-                  className="py-3 px-6 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs sm:text-sm font-bold rounded-xl transition-all border border-zinc-200"
+                  className="py-3.5 px-6 bg-[#378222] hover:bg-[#2b661a] text-white text-xs sm:text-sm font-bold transition-all cursor-pointer"
                 >
                   Contact Energy Engineers
                 </Link>
@@ -108,7 +110,7 @@ export default function SolutionDetailView({ solution }: Props) {
             </div>
 
             {/* Quick Spec Card */}
-            <div className="w-full lg:w-96 bg-white border border-zinc-200/90 rounded-2xl p-6 shadow-xl shadow-zinc-200/40 space-y-4">
+            <div className="w-full lg:w-96 bg-white border border-zinc-200 p-6 sm:p-8 space-y-4 shadow-sm">
               <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-100 pb-3">
                 Key Technical Overview
               </h3>
@@ -116,31 +118,32 @@ export default function SolutionDetailView({ solution }: Props) {
                 {solution.specs.map((spec, idx) => (
                   <div key={idx} className="flex flex-col">
                     <span className="text-[11px] text-zinc-500 font-medium">{spec.label}</span>
-                    <span className="text-sm font-bold text-[#0B1528]">{spec.value}</span>
+                    <span className="text-sm font-bold text-zinc-950">{spec.value}</span>
                   </div>
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
       {/* Main Content Grid */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full space-y-16">
+      <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 w-full space-y-16 sm:space-y-20">
         
         {/* Key Features & System Capabilities */}
         <div>
-          <div className="mb-8">
-            <span className="text-xs font-bold text-[#EE7130] uppercase tracking-wider">System Advantages</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1528] mt-1">
+          <div className="mb-8 space-y-2">
+            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block">System Advantages</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-950 tracking-tight">
               Key Features &amp; System Capabilities
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {solution.keyFeatures.map((feature, idx) => (
-              <div key={idx} className="bg-white border border-zinc-200/80 rounded-xl p-5 flex items-start gap-3.5 shadow-sm hover:border-zinc-300 transition-colors">
-                <CheckCircle2 className="w-5 h-5 text-[#459628] shrink-0 mt-0.5" />
+              <div key={idx} className="bg-white border border-zinc-200 p-5 flex items-start gap-3.5 shadow-sm hover:border-zinc-300 transition-colors">
+                <CheckCircle2 className="w-5 h-5 text-[#EE7130] shrink-0 mt-0.5" />
                 <span className="text-xs sm:text-sm font-medium text-zinc-800 leading-snug">
                   {feature}
                 </span>
@@ -150,21 +153,21 @@ export default function SolutionDetailView({ solution }: Props) {
         </div>
 
         {/* Benefits & Value Proposition */}
-        <div className="bg-zinc-50/70 border border-zinc-200/80 rounded-2xl p-8 sm:p-10">
-          <div className="mb-8 text-center max-w-2xl mx-auto">
-            <span className="text-xs font-bold text-[#459628] uppercase tracking-wider">Proven Returns</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1528] mt-1">
+        <div className="bg-zinc-50/70 border border-zinc-200 p-8 sm:p-12">
+          <div className="mb-8 text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs font-bold text-[#EE7130] uppercase tracking-widest block">Proven Returns</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-950 tracking-tight">
               Why Choose Our {solution.title} Setup?
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {solution.benefits.map((benefit, idx) => (
-              <div key={idx} className="bg-white border border-zinc-200/80 rounded-xl p-6 space-y-2 shadow-sm">
-                <div className="w-8 h-8 rounded-lg bg-orange-50 text-[#EE7130] border border-orange-100 flex items-center justify-center font-bold text-sm mb-3">
+              <div key={idx} className="bg-white border border-zinc-200 p-6 space-y-2 shadow-sm">
+                <div className="w-8 h-8 bg-zinc-950 text-white flex items-center justify-center font-bold text-xs mb-3">
                   0{idx + 1}
                 </div>
-                <h3 className="font-bold text-base text-[#0B1528]">{benefit.title}</h3>
+                <h3 className="font-bold text-base text-zinc-950">{benefit.title}</h3>
                 <p className="text-xs text-zinc-600 leading-relaxed">{benefit.desc}</p>
               </div>
             ))}
@@ -173,17 +176,17 @@ export default function SolutionDetailView({ solution }: Props) {
 
         {/* Ideal For (Target Audience) */}
         <div>
-          <div className="mb-6">
-            <span className="text-xs font-bold text-[#EE7130] uppercase tracking-wider">Tailored Applications</span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0B1528] mt-1">
+          <div className="mb-6 space-y-2">
+            <span className="text-xs font-bold text-zinc-500 uppercase tracking-widest block">Tailored Applications</span>
+            <h2 className="text-2xl sm:text-3xl font-black text-zinc-950 tracking-tight">
               Who Is This Solution Designed For?
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {solution.targetAudience.map((target, idx) => (
-              <div key={idx} className="bg-white border border-zinc-200/80 rounded-xl p-4 flex items-center gap-3 shadow-sm">
-                <div className="w-2 h-2 rounded-full bg-[#EE7130]" />
+              <div key={idx} className="bg-white border border-zinc-200 p-4 flex items-center gap-3 shadow-sm">
+                <div className="w-2 h-2 bg-[#378222]" />
                 <span className="text-xs font-semibold text-zinc-800">{target}</span>
               </div>
             ))}
@@ -192,21 +195,21 @@ export default function SolutionDetailView({ solution }: Props) {
 
         {/* FAQs Section */}
         {solution.faqs && solution.faqs.length > 0 && (
-          <div className="bg-zinc-50/70 border border-zinc-200/80 rounded-2xl p-8">
+          <div className="bg-zinc-50/70 border border-zinc-200 p-8 sm:p-12">
             <div className="flex items-center gap-2 mb-6">
-              <HelpCircle className="w-5 h-5 text-[#EE7130]" />
-              <h2 className="text-xl sm:text-2xl font-extrabold text-[#0B1528]">
+              <HelpCircle className="w-5 h-5 text-zinc-700" />
+              <h2 className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tight">
                 Frequently Asked Questions
               </h2>
             </div>
 
             <div className="space-y-4">
               {solution.faqs.map((faq, idx) => (
-                <div key={idx} className="bg-white border border-zinc-200/80 rounded-xl p-5 space-y-2 shadow-sm">
-                  <h3 className="text-sm font-bold text-[#0B1528] flex items-center gap-2">
-                    <span className="text-[#EE7130]">Q:</span> {faq.question}
+                <div key={idx} className="bg-white border border-zinc-200 p-5 sm:p-6 space-y-2 shadow-sm">
+                  <h3 className="text-sm sm:text-base font-bold text-zinc-950 flex items-center gap-2">
+                    <span className="text-[#378222]">Q:</span> {faq.question}
                   </h3>
-                  <p className="text-xs text-zinc-600 leading-relaxed pl-5">
+                  <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed pl-5">
                     {faq.answer}
                   </p>
                 </div>
@@ -216,33 +219,34 @@ export default function SolutionDetailView({ solution }: Props) {
         )}
 
         {/* Bottom CTA Banner */}
-        <div className="bg-[#0B1528] text-white border border-zinc-800 rounded-2xl p-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl">
-          <div>
-            <h3 className="text-xl font-extrabold text-white">
+        <div className="bg-zinc-950 text-white border border-zinc-800 p-8 sm:p-12 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8 shadow-2xl">
+          <div className="space-y-1 max-w-xl">
+            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
               Ready to deploy {solution.title}?
             </h3>
-            <p className="text-xs text-zinc-300 mt-1">
-              Obifoks Global engineers are available for site visits, load assessment, and custom design in Owerri &amp; across Nigeria.
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Obifoks Global engineers are available for site visits, load assessment, and custom system design in Owerri &amp; across Nigeria.
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <Link
               href="/solutions"
-              className="py-2.5 px-4 bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold rounded-xl transition-all flex items-center gap-1.5"
+              className="py-3.5 px-5 bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Solutions</span>
             </Link>
             <a
-              href={`https://wa.me/2349033333333?text=${whatsappMessage}`}
+              href={`https://wa.me/2349064566983?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-2.5 px-5 bg-[#EE7130] hover:bg-[#d85e1f] text-white text-xs font-bold rounded-xl transition-all shadow-lg shadow-[#EE7130]/20"
+              className="py-3.5 px-6 bg-[#378222] hover:bg-[#2b661a] text-white text-xs font-bold text-center transition-all cursor-pointer"
             >
               Get Sizing Quote
             </a>
           </div>
         </div>
+
       </section>
 
       <Footer />

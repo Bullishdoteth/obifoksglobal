@@ -28,9 +28,9 @@ export default function Header() {
     { label: "Home", href: "/", sectionId: "hero" },
     { label: "Products", href: "/products", sectionId: "products" },
     { label: "Solutions", href: "/solutions", hasMegaMenu: true, sectionId: "solutions" },
-    { label: "Projects", href: "#projects", sectionId: "projects" },
+    { label: "Projects", href: "/projects", sectionId: "projects" },
     { label: "About Us", href: "/about-us", sectionId: "about-us" },
-    { label: "Contact us", href: "#contact", sectionId: "contact" },
+    { label: "Contact us", href: "/contact", sectionId: "contact" },
   ];
 
   // Track active section hash or hero when on homepage
@@ -119,23 +119,23 @@ export default function Header() {
       return false; // Home is NOT highlighted when viewing other pages
     }
 
-    if (item.hasMegaMenu || item.href.startsWith("/solutions")) {
+    if (item.hasMegaMenu || item.sectionId === "solutions" || item.href.startsWith("/solutions")) {
       return pathname.startsWith("/solutions");
     }
 
-    if (item.href.startsWith("/products")) {
+    if (item.sectionId === "products" || item.href.startsWith("/products")) {
       return pathname.startsWith("/products");
     }
 
-    if (item.href.startsWith("/projects")) {
+    if (item.sectionId === "projects" || item.href.startsWith("/projects")) {
       return pathname.startsWith("/projects");
     }
 
-    if (item.href.startsWith("/about")) {
+    if (item.sectionId === "about-us" || item.href.startsWith("/about")) {
       return pathname.startsWith("/about");
     }
 
-    if (item.href.startsWith("/contact")) {
+    if (item.sectionId === "contact" || item.href.startsWith("/contact")) {
       return pathname.startsWith("/contact");
     }
 
@@ -149,7 +149,7 @@ export default function Header() {
         {/* Brand Logo & Wordmark */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="flex flex-col">
-            <span className="text-white font-extrabold text-base sm:text-lg md:text-xl tracking-tight leading-none group-hover:text-zinc-100 transition-colors">
+            <span className="text-white font-black text-base sm:text-lg md:text-xl tracking-tight leading-none group-hover:text-zinc-200 transition-colors">
               OBIFOKS <span className="text-[#EE7130]">GLOBAL</span>
             </span>
             <span className="text-zinc-400 font-bold text-[9px] sm:text-[10px] tracking-[0.2em] uppercase leading-tight pt-0.5">
@@ -174,9 +174,9 @@ export default function Header() {
                   <button
                     onClick={() => setSolutionsOpen(!solutionsOpen)}
                     aria-expanded={solutionsOpen}
-                    className={`relative text-xs sm:text-sm font-medium transition-colors py-2 flex items-center gap-1.5 focus:outline-none ${
+                    className={`relative text-xs sm:text-sm font-bold transition-colors py-2 flex items-center gap-1.5 focus:outline-none cursor-pointer ${
                       active || solutionsOpen
-                        ? "text-white font-semibold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#EE7130] after:rounded-full"
+                        ? "text-white font-extrabold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#EE7130]"
                         : "text-zinc-300 hover:text-white"
                     }`}
                   >
@@ -195,9 +195,9 @@ export default function Header() {
               <li key={item.label} className="h-full flex items-center">
                 <Link
                   href={item.href}
-                  className={`relative text-xs sm:text-sm font-medium transition-colors py-2 flex items-center gap-1 ${
+                  className={`relative text-xs sm:text-sm font-bold transition-colors py-2 flex items-center gap-1 ${
                     active
-                      ? "text-white font-semibold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#EE7130] after:rounded-full"
+                      ? "text-white font-extrabold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#EE7130]"
                       : "text-zinc-300 hover:text-white"
                   }`}
                 >
@@ -225,7 +225,7 @@ export default function Header() {
           {/* Search Icon */}
           <button
             aria-label="Search Site"
-            className="p-1.5 text-zinc-300 hover:text-white transition-colors"
+            className="p-1.5 text-zinc-300 hover:text-white transition-colors cursor-pointer"
           >
             <Search className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
           </button>
@@ -233,7 +233,7 @@ export default function Header() {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-zinc-300 hover:text-white p-2 rounded-lg transition-colors focus:outline-none"
+            className="md:hidden text-zinc-300 hover:text-white p-2 transition-colors focus:outline-none cursor-pointer"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -262,7 +262,7 @@ export default function Header() {
                   <li key={item.label} className="border-b border-white/10 pb-3 mb-2">
                     <button
                       onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}
-                      className={`w-full flex items-center justify-between py-3 text-base font-semibold focus:outline-none ${
+                      className={`w-full flex items-center justify-between py-3 text-base font-bold focus:outline-none cursor-pointer ${
                         active ? "text-[#EE7130]" : "text-zinc-200 hover:text-white"
                       }`}
                     >
@@ -305,7 +305,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center justify-between py-3 text-base font-semibold transition-colors ${
+                    className={`flex items-center justify-between py-3 text-base font-bold transition-colors ${
                       active
                         ? "text-[#EE7130]"
                         : "text-zinc-200 hover:text-white"

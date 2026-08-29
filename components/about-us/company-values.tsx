@@ -29,15 +29,15 @@ const VALUES = [
 
 export default function CompanyValues() {
   return (
-    <section className="py-16 sm:py-24 bg-white text-zinc-900 border-b border-zinc-200/80">
+    <section className="py-16 sm:py-24 bg-white text-zinc-900 border-b border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
         <div className="flex flex-col items-start max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-100/80 border border-orange-200 text-[#EE7130] text-xs font-bold uppercase tracking-wider mb-3">
-            <Award className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white text-xs font-semibold tracking-wider uppercase mb-4">
+            <Award className="w-3.5 h-3.5 text-[#EE7130]" />
             <span>Why Trust Obifoks Global</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1528] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">
             Our Uncompromising Operating Standards
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base mt-3 leading-relaxed">
@@ -52,13 +52,13 @@ export default function CompanyValues() {
             return (
               <div
                 key={val.title}
-                className="bg-zinc-50/80 border border-zinc-200/90 rounded-2xl p-6 flex flex-col justify-between hover:shadow-md hover:border-[#EE7130]/40 transition-all"
+                className="bg-zinc-50 border border-zinc-200 p-6 flex flex-col justify-between hover:border-zinc-950 transition-all shadow-sm"
               >
                 <div>
-                  <div className="p-3 rounded-xl bg-orange-50 border border-orange-100 text-[#EE7130] w-fit mb-4">
-                    <IconComp className="w-6 h-6" />
+                  <div className="p-3 bg-black text-white w-fit mb-4">
+                    <IconComp className="w-5 h-5 text-[#EE7130]" />
                   </div>
-                  <h3 className="text-base font-bold text-[#0B1528] mb-2">
+                  <h3 className="text-base font-extrabold text-zinc-950 mb-2">
                     {val.title}
                   </h3>
                   <p className="text-xs text-zinc-600 leading-relaxed">

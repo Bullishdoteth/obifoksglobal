@@ -37,15 +37,15 @@ const TEAM_MEMBERS = [
 
 export default function TeamSection() {
   return (
-    <section className="py-16 sm:py-24 bg-zinc-50/60 text-zinc-900 border-b border-zinc-200/80">
+    <section className="py-16 sm:py-24 bg-white text-zinc-900 border-b border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
         <div className="flex flex-col items-start max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-100/80 border border-orange-200 text-[#EE7130] text-xs font-bold uppercase tracking-wider mb-3">
-            <Users className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white text-xs font-semibold tracking-wider uppercase mb-4">
+            <Users className="w-3.5 h-3.5 text-[#EE7130]" />
             <span>Technical &amp; Field Operations</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1528] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">
             Our Departmental Leadership &amp; Engineering Team
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base mt-3 leading-relaxed">
@@ -60,27 +60,27 @@ export default function TeamSection() {
             return (
               <div
                 key={member.name}
-                className="bg-white border border-zinc-200/90 rounded-2xl p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-[#EE7130]/40 transition-all group"
+                className="bg-white border border-zinc-200 p-6 flex flex-col justify-between hover:border-zinc-950 transition-all group shadow-sm"
               >
                 <div>
                   {/* Top Icon & Badge */}
                   <div className="flex items-center justify-between mb-5">
-                    <div className="p-3 rounded-xl bg-orange-50 border border-orange-100 text-[#EE7130] group-hover:bg-[#EE7130] group-hover:text-white transition-colors">
-                      <IconComponent className="w-6 h-6" />
+                    <div className="p-3 bg-black text-white group-hover:bg-[#2b661a] transition-colors">
+                      <IconComponent className="w-5 h-5 text-[#EE7130]" />
                     </div>
-                    <span className="px-2.5 py-1 rounded-md bg-zinc-100 border border-zinc-200 text-[10px] uppercase tracking-wider font-bold text-zinc-600">
+                    <span className="px-2.5 py-1 bg-zinc-100 border border-zinc-200 text-[10px] uppercase tracking-wider font-bold text-zinc-700">
                       {member.badge}
                     </span>
                   </div>
 
                   {/* Name & Role */}
-                  <h3 className="text-base font-bold text-[#0B1528] group-hover:text-[#EE7130] transition-colors">
+                  <h3 className="text-base font-extrabold text-zinc-950 group-hover:text-[#EE7130] transition-colors">
                     {member.name}
                   </h3>
                   <p className="text-xs font-semibold text-[#EE7130] mt-0.5">
                     {member.role}
                   </p>
-                  <p className="text-[10px] text-zinc-400 uppercase tracking-widest font-semibold mt-2">
+                  <p className="text-[10px] text-zinc-400 uppercase tracking-wider font-bold mt-2">
                     {member.department}
                   </p>
 

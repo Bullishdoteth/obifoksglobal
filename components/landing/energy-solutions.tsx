@@ -91,15 +91,15 @@ export default function EnergySolutions() {
             {/* Quick Stats Pill */}
             <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-zinc-400 pt-1">
               <span className="flex items-center gap-1.5 text-zinc-300">
-                <span className="text-emerald-400 font-bold">70+</span> Projects
+                <span className="text-[#EE7130] font-bold">70+</span> Projects
               </span>
               <span className="text-zinc-700">•</span>
               <span className="flex items-center gap-1.5 text-zinc-300">
-                <span className="text-emerald-400 font-bold">4+</span> Major Brands
+                <span className="text-[#EE7130] font-bold">4+</span> Major Brands
               </span>
               <span className="text-zinc-700">•</span>
               <span className="flex items-center gap-1.5 text-zinc-300">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> Professional Installation
+                <ShieldCheck className="w-3.5 h-3.5 text-[#EE7130]" /> Professional Installation
               </span>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function EnergySolutions() {
                     onClick={() => setActiveSolution(index)}
                     className={`group cursor-pointer py-6 sm:py-7 transition-all duration-300 relative border-l-2 pl-6 sm:pl-8 ${
                       isActive
-                        ? "border-emerald-500 bg-zinc-900/40"
+                        ? "border-[#EE7130] bg-zinc-900/40"
                         : "border-transparent hover:border-zinc-700 hover:bg-zinc-900/20"
                     }`}
                   >
@@ -128,7 +128,7 @@ export default function EnergySolutions() {
                       <div className="flex items-baseline gap-4 sm:gap-6">
                         <span
                           className={`font-mono text-sm sm:text-base font-semibold transition-colors duration-300 ${
-                            isActive ? "text-emerald-400" : "text-zinc-500 group-hover:text-zinc-400"
+                            isActive ? "text-[#EE7130]" : "text-zinc-500 group-hover:text-zinc-400"
                           }`}
                         >
                           {item.number}
@@ -151,7 +151,7 @@ export default function EnergySolutions() {
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300 shrink-0 ${
                           isActive
-                            ? "bg-emerald-500 text-black border-emerald-500 translate-x-1"
+                            ? "bg-[#EE7130] text-black border-[#EE7130] translate-x-1"
                             : "bg-zinc-900/60 text-zinc-400 border-zinc-800 group-hover:text-white group-hover:border-zinc-700 group-hover:translate-x-1"
                         }`}
                       >
@@ -175,7 +175,7 @@ export default function EnergySolutions() {
               <span>Hover or click any solution category to inspect details</span>
               <Link
                 href="#contact"
-                className="text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1 transition-colors"
+                className="text-[#EE7130] hover:text-orange-400 font-semibold flex items-center gap-1 transition-colors"
               >
                 Request Custom Solution Design <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>

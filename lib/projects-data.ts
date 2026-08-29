@@ -204,3 +204,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "Guarantees unbroken ventilation and water supply to protect poultry stock from extreme heat stress during prolonged power outages.",
   },
 ];
+
+export function getProjectBySlug(slug: string): ProjectItem | undefined {
+  return PROJECTS_DATA.find((p) => p.slug === slug || p.id === slug);
+}
+
+export function getAllProjectSlugs(): string[] {
+  return PROJECTS_DATA.map((p) => p.slug);
+}
+

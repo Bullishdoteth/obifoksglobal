@@ -13,7 +13,7 @@ export default function CTA() {
           
           {/* Top Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold uppercase tracking-widest">
-            <Zap className="w-3.5 h-3.5 text-emerald-400" />
+            <Zap className="w-3.5 h-3.5 text-[#EE7130]" />
             <span>START YOUR SOLAR JOURNEY TODAY</span>
           </div>
 
@@ -48,15 +48,15 @@ export default function CTA() {
           {/* Key Value Guarantee Points */}
           <div className="pt-8 sm:pt-10 border-t border-zinc-900 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-semibold text-zinc-400">
             <span className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <ShieldCheck className="w-4 h-4 text-[#EE7130]" />
               Certified Engineers
             </span>
             <span className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-emerald-400" />
+              <Zap className="w-4 h-4 text-[#EE7130]" />
               24/7 Power Support
             </span>
             <span className="flex items-center gap-2">
-              <PhoneCall className="w-4 h-4 text-emerald-400" />
+              <PhoneCall className="w-4 h-4 text-[#EE7130]" />
               Fast Direct Response
             </span>
           </div>

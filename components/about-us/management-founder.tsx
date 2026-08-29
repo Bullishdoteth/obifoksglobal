@@ -2,15 +2,15 @@ import { Quote, UserCheck, Shield, Check } from "lucide-react";
 
 export default function ManagementFounder() {
   return (
-    <section className="py-16 sm:py-24 bg-white text-zinc-900 border-b border-zinc-200/80">
+    <section className="py-16 sm:py-24 bg-white text-zinc-900 border-b border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         {/* Header */}
         <div className="flex flex-col items-start max-w-3xl mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-100/80 border border-orange-200 text-[#EE7130] text-xs font-bold uppercase tracking-wider mb-3">
-            <UserCheck className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-black text-white text-xs font-semibold tracking-wider uppercase mb-4">
+            <UserCheck className="w-3.5 h-3.5 text-[#EE7130]" />
             <span>Executive Leadership</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0B1528] tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-zinc-950 tracking-tight">
             Founder &amp; Executive Management
           </h2>
           <p className="text-zinc-600 text-sm sm:text-base mt-3 leading-relaxed">
@@ -19,17 +19,17 @@ export default function ManagementFounder() {
         </div>
 
         {/* Founder Spotlight Card */}
-        <div className="bg-zinc-50/80 border border-zinc-200/90 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
+        <div className="bg-zinc-50 border border-zinc-200 p-6 sm:p-10 lg:p-12 shadow-sm relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left: Founder Initials / Executive Badge Frame */}
-            <div className="lg:col-span-4 flex flex-col items-center text-center p-8 bg-white rounded-2xl border border-zinc-200 shadow-sm relative">
+            <div className="lg:col-span-4 flex flex-col items-center text-center p-8 bg-white border border-zinc-200 shadow-sm relative">
               {/* Profile Monogram Avatar */}
-              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-[#EE7130] text-white flex items-center justify-center font-black text-3xl sm:text-4xl shadow-md mb-6 border-4 border-white">
+              <div className="w-28 h-28 sm:w-32 sm:h-32 bg-black text-white flex items-center justify-center font-black text-3xl sm:text-4xl shadow-md mb-6 border-4 border-zinc-200">
                 OG
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-black text-[#0B1528] tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tight">
                 Obinna Nwachukwu
               </h3>
               <p className="text-[#EE7130] text-xs sm:text-sm font-bold uppercase tracking-wider mt-1">
@@ -39,20 +39,20 @@ export default function ManagementFounder() {
                 Obifoks Global &amp; Felicity Nig. Ltd.
               </p>
 
-              <div className="w-full border-t border-zinc-100 my-5" />
+              <div className="w-full border-t border-zinc-200 my-5" />
 
               <div className="flex flex-col space-y-2 w-full text-left text-xs text-zinc-700">
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-[#EE7130] shrink-0" />
-                  <span>10+ Years Power Systems Engineering</span>
+                  <span className="font-semibold">10+ Years Power Systems Engineering</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-[#EE7130] shrink-0" />
-                  <span>Certified Solar Microgrid Architect</span>
+                  <span className="font-semibold">Certified Solar Microgrid Architect</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Check className="w-3.5 h-3.5 text-[#EE7130] shrink-0" />
-                  <span>Executive Operations Lead</span>
+                  <span className="font-semibold">Executive Operations Lead</span>
                 </div>
               </div>
             </div>
@@ -60,20 +60,20 @@ export default function ManagementFounder() {
             {/* Right: Executive Statement & Vision */}
             <div className="lg:col-span-8 space-y-6">
               <div className="flex items-center gap-3">
-                <Quote className="w-8 h-8 text-[#EE7130] shrink-0" />
-                <span className="text-xs uppercase tracking-widest font-bold text-zinc-400">
+                <Quote className="w-8 h-8 text-zinc-950 shrink-0" />
+                <span className="text-xs uppercase tracking-wider font-bold text-zinc-400">
                   Founder&apos;s Statement &amp; Vision
                 </span>
               </div>
 
-              <blockquote className="text-base sm:text-lg md:text-xl font-medium text-zinc-800 leading-relaxed italic border-l-4 border-[#EE7130] pl-4 sm:pl-6">
+              <blockquote className="text-base sm:text-lg md:text-xl font-medium text-zinc-800 leading-relaxed italic border-l-4 border-zinc-950 pl-4 sm:pl-6">
                 &ldquo;Our vision at Obifoks Global was born out of necessity: Nigerian homes and commercial enterprises deserve genuine, dependable electricity without deceptive capacity ratings or fragile equipment. When you choose Obifoks Global, you are placing your trust in verified engineering standards, authentic direct factory components, and an after-sales engineering team that remains by your side long after installation.&rdquo;
               </blockquote>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                <div className="p-4 rounded-xl bg-white border border-zinc-200/80 shadow-xs">
-                  <div className="flex items-center gap-2 text-[#EE7130] font-bold text-sm mb-1">
-                    <Shield className="w-4 h-4" />
+                <div className="p-5 bg-white border border-zinc-200">
+                  <div className="flex items-center gap-2 text-zinc-950 font-bold text-sm mb-1">
+                    <Shield className="w-4 h-4 text-[#EE7130]" />
                     <span>Zero Substandard Compromise</span>
                   </div>
                   <p className="text-xs text-zinc-600 leading-relaxed">
@@ -81,9 +81,9 @@ export default function ManagementFounder() {
                   </p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white border border-zinc-200/80 shadow-xs">
-                  <div className="flex items-center gap-2 text-emerald-600 font-bold text-sm mb-1">
-                    <UserCheck className="w-4 h-4" />
+                <div className="p-5 bg-white border border-zinc-200">
+                  <div className="flex items-center gap-2 text-[#EE7130] font-bold text-sm mb-1">
+                    <UserCheck className="w-4 h-4 text-[#EE7130]" />
                     <span>Direct Accountability</span>
                   </div>
                   <p className="text-xs text-zinc-600 leading-relaxed">
