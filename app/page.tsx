@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import Hero from "@/components/landing/hero";
 import Header from "@/components/landing/header";
 import ProductCatalog from "@/components/landing/product-catalog";
-import EnergySolutions from "@/components/landing/energy-solutions";
 import WhyObifoks from "@/components/landing/why-obifoks";
 import Projects from "@/components/landing/projects";
-import Brands from "@/components/landing/brands";
-import CTA from "@/components/landing/cta";
 import ContactUs from "@/components/landing/contact-us";
 import Footer from "@/components/landing/footer";
+import AboutUs from "@/components/landing/about-us";
 
 export const metadata: Metadata = {
   title: "Solar Panels, Lithium Batteries & Energy Storage Owerri | Obifoks Global",
@@ -42,11 +40,9 @@ export default function Home() {
       <Header />
       <Hero />
       <ProductCatalog />
-      <EnergySolutions />
       <WhyObifoks />
       <Projects />
-      <Brands />
-      <CTA />
+      <AboutUs />
       <ContactUs />
       <Footer />
     </main>
