@@ -6,7 +6,6 @@ import Link from "next/link";
 import Header from "@/components/landing/header";
 import PageHeader from "@/components/page-header";
 import Footer from "@/components/landing/footer";
-import { useCart } from "@/context/cart-context";
 import { 
   PRODUCT_CATEGORIES, 
   PRODUCTS_DATA, 
@@ -14,7 +13,6 @@ import {
 } from "@/lib/products-data";
 import { 
   Search, 
-  ShoppingBag, 
   Check, 
   SlidersHorizontal, 
   Zap, 
@@ -53,9 +51,6 @@ export default function ProductsClientView() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeModalProduct, setActiveModalProduct] = useState<ProductItem | null>(null);
-  const [addedItemIds, setAddedItemIds] = useState<Record<string, boolean>>({});
-  
-  const { addToCart } = useCart();
 
   // Filter products by category and search query
   const filteredProducts = useMemo(() => {
@@ -74,22 +69,6 @@ export default function ProductsClientView() {
       return matchesCategory && matchesSearch;
     });
   }, [selectedCategory, searchQuery]);
-
-  const handleAddToCart = (product: ProductItem) => {
-    addToCart({
-      id: product.id,
-      name: product.name,
-      description: product.description,
-      image: product.image,
-      specs: product.keySpecs,
-      category: product.categoryName,
-    });
-
-    setAddedItemIds((prev) => ({ ...prev, [product.id]: true }));
-    setTimeout(() => {
-      setAddedItemIds((prev) => ({ ...prev, [product.id]: false }));
-    }, 2000);
-  };
 
   const getWhatsAppLink = (product: ProductItem) => {
     const text = encodeURIComponent(
@@ -182,8 +161,6 @@ export default function ProductsClientView() {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-10 sm:gap-y-14 lg:gap-y-16 w-full">
             {filteredProducts.map((product) => {
-              const isAdded = addedItemIds[product.id];
-
               return (
                 <div
                   key={product.id}
@@ -275,7 +252,7 @@ export default function ProductsClientView() {
         </div>
       </section>
 
-      {/* Product Technical Specs Modal (2-Column Full Width - Sharp Corners) */}
+      {/* Product Technical Specs Modal */}
       {activeModalProduct && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="relative w-full max-w-5xl lg:max-w-6xl max-h-[90vh] bg-white shadow-2xl overflow-hidden flex flex-col border border-zinc-200">
@@ -409,26 +386,17 @@ export default function ProductsClientView() {
               </div>
             </div>
 
-            {/* Modal Footer Actions */}
+            {/* Modal Footer Actions - WhatsApp Inquiry is the only button */}
             <div className="p-5 sm:p-6 border-t border-zinc-100 bg-zinc-50/80 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-xs text-zinc-500 text-center sm:text-left font-medium">
                 Showroom Address: No. 6 Wetheral Road, Opposite Polaris Bank, Owerri.
               </div>
-              <div className="flex items-center gap-3 w-full sm:w-auto">
-                <button
-                  onClick={() => {
-                    handleAddToCart(activeModalProduct);
-                    setActiveModalProduct(null);
-                  }}
-                  className="flex-1 sm:flex-none px-6 py-3 bg-[#378222] hover:bg-[#2b661a] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
-                >
-                  <ShoppingBag className="w-4 h-4" /> Add to Cart
-                </button>
+              <div className="w-full sm:w-auto">
                 <a
                   href={getWhatsAppLink(activeModalProduct)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 sm:flex-none px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all"
+                  className="w-full sm:w-auto px-8 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2.5 shadow-md transition-all"
                 >
                   <MessageSquare className="w-4 h-4" /> Inquire via WhatsApp
                 </a>
@@ -442,3 +410,4 @@ export default function ProductsClientView() {
     </main>
   );
 }
+

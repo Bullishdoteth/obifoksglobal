@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShoppingBag, Info, X, Check, MessageSquare } from "lucide-react";
-import { useCart } from "@/context/cart-context";
+import { ArrowRight, Check, MessageSquare, X } from "lucide-react";
 
 interface CatalogProduct {
   id: string;
@@ -93,24 +92,6 @@ const TOP_SELLING_PRODUCTS: CatalogProduct[] = [
 
 export default function ProductCatalog() {
   const [selectedProduct, setSelectedProduct] = useState<CatalogProduct | null>(null);
-  const [addedItemIds, setAddedItemIds] = useState<Record<string, boolean>>({});
-  const { addToCart } = useCart();
-
-  const handleAddToCart = (product: CatalogProduct) => {
-    addToCart({
-      id: product.id,
-      name: product.name,
-      description: product.description,
-      image: product.image,
-      specs: product.specs,
-      category: product.category,
-    });
-
-    setAddedItemIds((prev) => ({ ...prev, [product.id]: true }));
-    setTimeout(() => {
-      setAddedItemIds((prev) => ({ ...prev, [product.id]: false }));
-    }, 2000);
-  };
 
   const getWhatsAppLink = (product: CatalogProduct) => {
     const text = encodeURIComponent(
@@ -149,8 +130,6 @@ export default function ProductCatalog() {
         {/* 8 Products Grid: 2 cols on mobile, 3 cols on tablet, 4 cols on desktop */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-10 sm:gap-y-14 lg:gap-y-16 w-full">
           {TOP_SELLING_PRODUCTS.map((product) => {
-            const isAdded = addedItemIds[product.id];
-
             return (
               <div
                 key={product.id}
@@ -270,34 +249,15 @@ export default function ProductCatalog() {
               </div>
             </div>
 
-            {/* Modal Actions */}
-            <div className="p-6 border-t border-zinc-100 bg-zinc-50/80 flex items-center gap-3">
-              <button
-                onClick={() => handleAddToCart(selectedProduct)}
-                className={`flex-1 py-3 text-xs font-bold flex items-center justify-center gap-2 transition-all ${
-                  addedItemIds[selectedProduct.id]
-                    ? "bg-emerald-600 text-white"
-                    : "bg-[#0B1528] hover:bg-[#13223f] text-white"
-                }`}
-              >
-                {addedItemIds[selectedProduct.id] ? (
-                  <>
-                    <Check className="w-4 h-4 stroke-[3]" /> Added to Cart
-                  </>
-                ) : (
-                  <>
-                    <ShoppingBag className="w-4 h-4" /> Add to Cart
-                  </>
-                )}
-              </button>
-
+            {/* Modal Actions - Inquire via WhatsApp is the ONLY button */}
+            <div className="p-6 border-t border-zinc-100 bg-zinc-50/80 flex items-center justify-end">
               <a
                 href={getWhatsAppLink(selectedProduct)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-2 shadow-md transition-all"
+                className="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold flex items-center justify-center gap-2 shadow-md transition-all"
               >
-               Inquire via WhatsApp
+                <MessageSquare className="w-4 h-4" /> Inquire via WhatsApp
               </a>
             </div>
 
@@ -307,3 +267,4 @@ export default function ProductCatalog() {
     </section>
   );
 }
+

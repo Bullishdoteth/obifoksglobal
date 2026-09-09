@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ConsentBanner from "@/components/consentBanner";
-import { CartProvider } from "@/context/cart-context";
-import CartSidebar from "@/components/shop/cart";
 import "./globals.css";
 
 const inter = Inter({
@@ -76,12 +74,10 @@ export default function RootLayout({
       className={`${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <CartProvider>
-          {children}
-          <CartSidebar />
-        </CartProvider>
+        {children}
         <ConsentBanner />
       </body>
     </html>
   );
 }
+

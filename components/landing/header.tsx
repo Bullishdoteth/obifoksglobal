@@ -3,19 +3,19 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { 
-  ShoppingBag, 
-  Menu, 
+import {
+  Menu,
   X
 } from "lucide-react";
-import { useCart } from "@/context/cart-context";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [mobileSolutionsOpen, setMobileSolutionsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
-  const { totalItems, openCart } = useCart();
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const navItems = [
     { label: "Home", href: "/", sectionId: "hero" },
@@ -70,10 +70,11 @@ export default function Header() {
     };
   }, [pathname]);
 
-  // Close mobile menu when clicking outside
+  // Close mega menu & mobile menu when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setSolutionsOpen(false);
         setMobileMenuOpen(false);
       }
     }
@@ -82,6 +83,18 @@ export default function Header() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  // Handle mouse enter with slight delay buffer
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setSolutionsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setSolutionsOpen(false);
+    }, 150);
+  };
 
   // Logic to determine if a nav item is genuinely active
   const isItemActive = (item: (typeof navItems)[0]) => {
@@ -119,7 +132,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-black text-white border-b border-white/10 shadow-xl relative" ref={dropdownRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between relative">
-        
+
         {/* Brand Logo & Wordmark */}
         <Link href="/" className="flex items-center gap-3 group">
           <div className="flex flex-col">
@@ -141,11 +154,10 @@ export default function Header() {
               <li key={item.label} className="h-full flex items-center">
                 <Link
                   href={item.href}
-                  className={`relative text-xs sm:text-sm font-bold transition-colors py-2 flex items-center gap-1 ${
-                    active
-                      ? "text-white font-extrabold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#EE7130]"
-                      : "text-zinc-300 hover:text-white"
-                  }`}
+                  className={`relative text-xs sm:text-sm font-bold transition-colors py-2 flex items-center gap-1 ${active
+                    ? "text-white font-extrabold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#EE7130]"
+                    : "text-zinc-300 hover:text-white"
+                    }`}
                 >
                   <span>{item.label}</span>
                 </Link>
@@ -154,21 +166,8 @@ export default function Header() {
           })}
         </ul>
 
-        {/* Right Actions: Shopping Cart & Search Icons */}
+        {/* Right Actions: Mobile Menu Toggle Button */}
         <div className="flex items-center gap-4 sm:gap-6">
-          {/* Cart Icon with badge */}
-          <button
-            onClick={openCart}
-            aria-label={`Shopping Cart (${totalItems} items)`}
-            className="relative p-1.5 text-zinc-300 hover:text-white transition-colors cursor-pointer focus:outline-none"
-          >
-            <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6 stroke-[1.8]" />
-            <span className="absolute -top-1 -right-1.5 w-4 h-4 bg-[#EE7130] text-white text-[10px] font-bold rounded-full flex items-center justify-center border border-black transition-transform scale-100">
-              {totalItems}
-            </span>
-          </button>
-
-          {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden text-zinc-300 hover:text-white p-2 transition-colors focus:outline-none cursor-pointer"
@@ -191,11 +190,10 @@ export default function Header() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`flex items-center justify-between py-3 text-base font-bold transition-colors ${
-                      active
-                        ? "text-[#EE7130]"
-                        : "text-zinc-200 hover:text-white"
-                    }`}
+                    className={`flex items-center justify-between py-3 text-base font-bold transition-colors ${active
+                      ? "text-[#EE7130]"
+                      : "text-zinc-200 hover:text-white"
+                      }`}
                   >
                     <span>{item.label}</span>
                   </Link>
@@ -208,3 +206,4 @@ export default function Header() {
     </header>
   );
 }
+

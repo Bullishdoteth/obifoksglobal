@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, ShoppingBag } from "lucide-react";
-import { useCart } from "@/context/cart-context";
+import { ArrowRight, Check, MessageSquare } from "lucide-react";
 
 interface ProductModel {
   name: string;
@@ -176,7 +175,6 @@ function FelicitySolarLogo() {
 export default function Products() {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
   const [activeModelIndex, setActiveModelIndex] = useState(0);
-  const { addToCart } = useCart();
 
   const currentCategory = productCategories[activeCategoryIndex];
   const currentModel =
@@ -185,6 +183,13 @@ export default function Products() {
   const handleCategorySelect = (index: number) => {
     setActiveCategoryIndex(index);
     setActiveModelIndex(0);
+  };
+
+  const getWhatsAppLink = (modelName: string, categoryName: string) => {
+    const text = encodeURIComponent(
+      `Hello Obifoks Global! I want to inquire about purchasing:\n\n*Product:* ${modelName}\n*Category:* ${categoryName}\n\nPlease provide current pricing, stock availability, and delivery options.`
+    );
+    return `https://wa.me/2348026640279?text=${text}`;
   };
 
   return (
@@ -289,24 +294,17 @@ export default function Products() {
                 </div>
               )}
 
-              {/* Action Buttons: Add to Cart & View More */}
+              {/* Action Buttons: Inquire via WhatsApp & Request Quote */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
-                <button
-                  onClick={() =>
-                    addToCart({
-                      id: currentModel.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
-                      name: currentModel.name,
-                      description: currentModel.description,
-                      image: currentModel.image,
-                      category: currentCategory.name,
-                      specs: currentModel.specs,
-                    })
-                  }
-                  className="inline-flex items-center gap-2.5 bg-[#378222] hover:bg-[#2b661a] text-white text-sm sm:text-base font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-md shadow-emerald-900/20 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 group cursor-pointer"
+                <a
+                  href={getWhatsAppLink(currentModel.name, currentCategory.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm sm:text-base font-semibold px-6 py-3 transition-all duration-300 shadow-md shadow-emerald-900/20 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
                 >
-                  <ShoppingBag className="w-4 h-4 stroke-[2.2]" />
-                  <span>Add to Cart</span>
-                </button>
+                  <MessageSquare className="w-4 h-4 stroke-[2.2]" />
+                  <span>Inquire via WhatsApp</span>
+                </a>
                 <a
                   href="#quote"
                   className="inline-flex items-center gap-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-sm sm:text-base font-semibold px-5 py-3 rounded-xl transition-all duration-300"
@@ -371,3 +369,4 @@ export default function Products() {
     </section>
   );
 }
+

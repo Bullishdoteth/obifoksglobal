@@ -103,13 +103,13 @@ export default function Projects() {
   const checkScroll = () => {
     if (!scrollContainerRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-    setCanScrollLeft(scrollLeft > 20);
-    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 20);
+    setCanScrollLeft(scrollLeft > 10);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
 
-    // Calculate approximate active slide index
-    const slideWidth = clientWidth > 640 ? 520 : clientWidth * 0.88;
-    const index = Math.round(scrollLeft / slideWidth);
-    setActiveIndex(Math.min(Math.max(index, 0), projectsData.length - 1));
+    if (clientWidth > 0) {
+      const index = Math.round(scrollLeft / clientWidth);
+      setActiveIndex(Math.min(Math.max(index, 0), projectsData.length - 1));
+    }
   };
 
   useEffect(() => {
@@ -126,13 +126,19 @@ export default function Projects() {
     };
   }, []);
 
-  const scroll = (direction: "left" | "right") => {
+  const goToSlide = (index: number) => {
     if (!scrollContainerRef.current) return;
-    const scrollAmount = scrollContainerRef.current.clientWidth * 0.8;
-    scrollContainerRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
+    const targetIndex = Math.min(Math.max(index, 0), projectsData.length - 1);
+    const slideWidth = scrollContainerRef.current.clientWidth;
+    scrollContainerRef.current.scrollTo({
+      left: targetIndex * slideWidth,
       behavior: "smooth",
     });
+  };
+
+  const scroll = (direction: "left" | "right") => {
+    const targetIndex = direction === "left" ? activeIndex - 1 : activeIndex + 1;
+    goToSlide(targetIndex);
   };
 
   return (
@@ -174,119 +180,153 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Scrollable Carousel Track */}
+        {/* Scrollable Carousel Track - 1 slide per view */}
         <div
           ref={scrollContainerRef}
-          className="flex overflow-x-auto gap-6 sm:gap-8 pb-8 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-12 lg:px-12"
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth w-full"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {projectsData.map((project, idx) => (
             <div
               key={project.id}
-              className="snap-start shrink-0 w-[88vw] sm:w-[500px] lg:w-[540px] bg-zinc-950 border border-zinc-800 hover:border-zinc-700 overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-xl"
+              className="w-full shrink-0 snap-start snap-always py-2"
             >
-              <div>
-                {/* Image Header */}
-                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-zinc-900">
+              <div className="bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl hover:border-zinc-700 transition-all duration-300 grid grid-cols-1 lg:grid-cols-12 gap-0">
+                {/* Left Side: Image & Main Header */}
+                <div className="lg:col-span-5 relative min-h-[280px] sm:min-h-[360px] lg:min-h-full bg-zinc-900 overflow-hidden flex flex-col justify-between p-6 sm:p-8">
                   <Image
                     src={project.image}
                     alt={project.name}
                     fill
-                    sizes="(max-width: 640px) 88vw, 540px"
-                    className="object-cover object-center transition-transform duration-500 hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 45vw"
+                    className="object-cover object-center transition-transform duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-90" />
-                  
-                  {/* Location Badge */}
-                  <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
-                    <span className="bg-black/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 border border-zinc-800 flex items-center gap-1.5 rounded-lg">
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-black/60 z-10" />
+
+                  {/* Top Badges */}
+                  <div className="relative z-20 flex flex-wrap gap-2">
+                    <span className="bg-black/80 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 border border-zinc-700/80 flex items-center gap-1.5 rounded-lg shadow-md">
                       <MapPin className="w-3.5 h-3.5 text-[#EE7130]" />
                       {project.location}
                     </span>
                     {project.featured && (
-                      <span className="bg-[#EE7130] text-white text-xs font-bold px-3 py-1.5 rounded-lg">
+                      <span className="bg-[#EE7130] text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-md">
                         FEATURED DEPLOYMENT
                       </span>
                     )}
                   </div>
-                </div>
 
-                {/* Card Content Body */}
-                <div className="p-6 sm:p-8 space-y-5">
-                  <div>
-                    <span className="text-xs uppercase tracking-wider font-semibold text-zinc-500 block mb-1">
+                  {/* Bottom Image Overlay Details */}
+                  <div className="relative z-20 mt-auto pt-16">
+                    <span className="text-xs uppercase tracking-widest font-bold text-[#EE7130] block mb-1">
                       {project.category}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                    <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight drop-shadow-md">
                       {project.name}
                     </h3>
                   </div>
+                </div>
 
-                  <p className="text-zinc-300 text-xs sm:text-sm leading-relaxed">
-                    {project.summary}
-                  </p>
-
-                  {/* Key Specs Box */}
-                  <div className="bg-zinc-900/90 border border-zinc-800 p-4 space-y-3">
-                    <div className="grid grid-cols-2 gap-3 text-xs">
+                {/* Right Side: Specs & Detailed Content */}
+                <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6">
+                  <div>
+                    {/* Header info bar */}
+                    <div className="flex items-center justify-between gap-4 pb-4 border-b border-zinc-800/80">
                       <div className="flex items-center gap-2">
-                        <BatteryCharging className="w-4 h-4 text-[#EE7130] shrink-0" />
-                        <div>
-                          <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold">Storage</span>
-                          <span className="text-white font-bold">{project.battery}</span>
+                        <span className="w-2 h-2 rounded-full bg-[#EE7130]" />
+                        <span className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                          Project Case Study
+                        </span>
+                      </div>
+                      <span className="font-mono text-xs text-zinc-400 font-semibold px-2.5 py-1 bg-zinc-900 rounded-md border border-zinc-800">
+                        0{idx + 1} / 0{projectsData.length}
+                      </span>
+                    </div>
+
+                    {/* Summary Description */}
+                    <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mt-5">
+                      {project.summary}
+                    </p>
+
+                    {/* Technical Specifications Grid */}
+                    <div className="mt-6 bg-zinc-900/90 border border-zinc-800/90 rounded-xl p-4 sm:p-5">
+                      <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <Zap className="w-3.5 h-3.5 text-[#EE7130]" /> System Specifications
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div className="flex items-center gap-3 bg-zinc-950/80 p-3 rounded-lg border border-zinc-800/60">
+                          <BatteryCharging className="w-5 h-5 text-[#EE7130] shrink-0" />
+                          <div>
+                            <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold">Storage</span>
+                            <span className="text-white font-bold text-xs sm:text-sm">{project.battery}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3 bg-zinc-950/80 p-3 rounded-lg border border-zinc-800/60">
+                          <Sun className="w-5 h-5 text-[#EE7130] shrink-0" />
+                          <div>
+                            <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold">Solar Array</span>
+                            <span className="text-white font-bold text-xs sm:text-sm">{project.panels}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-3 bg-zinc-950/80 p-3 rounded-lg border border-zinc-800/60">
+                          <Zap className="w-5 h-5 text-[#EE7130] shrink-0" />
+                          <div>
+                            <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold">Capacity</span>
+                            <span className="text-white font-bold text-xs sm:text-sm">{project.systemSize}</span>
+                          </div>
                         </div>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Sun className="w-4 h-4 text-[#EE7130] shrink-0" />
-                        <div>
-                          <span className="text-[10px] text-zinc-500 uppercase tracking-wider block font-semibold">Solar Array</span>
-                          <span className="text-white font-bold">{project.panels}</span>
-                        </div>
+                    </div>
+
+                    {/* Key Outcomes & Impact */}
+                    <div className="mt-6 space-y-3">
+                      <h4 className="text-xs font-bold text-zinc-400 uppercase tracking-wider">
+                        Key Outcomes & Value Delivered
+                      </h4>
+                      <div className="grid grid-cols-1 gap-2.5">
+                        {project.impact.map((item, i) => (
+                          <div key={i} className="flex items-start gap-3 text-xs sm:text-sm text-zinc-300 bg-zinc-900/40 p-2.5 rounded-lg border border-zinc-800/40">
+                            <CheckCircle2 className="w-4 h-4 text-[#EE7130] shrink-0 mt-0.5" />
+                            <span className="leading-snug">{item}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
 
-                  {/* Impact Highlights */}
-                  <div className="space-y-2 pt-1">
-                    <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Key Outcomes:</span>
-                    {project.impact.map((item, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs text-zinc-300">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#EE7130] shrink-0 mt-0.5" />
-                        <span className="leading-snug">{item}</span>
-                      </div>
-                    ))}
+                  {/* Card Footer */}
+                  <div className="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs text-zinc-500">
+                    <span className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      Active Commercial Installation
+                    </span>
+                    <span className="font-mono text-zinc-400 font-semibold">
+                      Project 0{idx + 1} of 0{projectsData.length}
+                    </span>
                   </div>
                 </div>
-              </div>
-
-              {/* Card Footer Indicator */}
-              <div className="px-6 py-4 sm:px-8 border-t border-zinc-900 bg-zinc-900/30 flex items-center justify-between text-xs text-zinc-500 font-medium">
-                <span>System Size: <strong className="text-zinc-300">{project.systemSize}</strong></span>
-                <span className="font-mono text-zinc-600">0{idx + 1} / 0{projectsData.length}</span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Carousel Indicator Dots */}
-        <div className="flex items-center justify-center gap-2 mt-4">
-          {projectsData.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                if (!scrollContainerRef.current) return;
-                const slideWidth = scrollContainerRef.current.clientWidth > 640 ? 520 : scrollContainerRef.current.clientWidth * 0.88;
-                scrollContainerRef.current.scrollTo({
-                  left: i * (slideWidth + 32),
-                  behavior: "smooth",
-                });
-              }}
-              aria-label={`Go to project slide ${i + 1}`}
-              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                activeIndex === i ? "w-8 bg-[#EE7130]" : "w-2 bg-zinc-800 hover:bg-zinc-700"
-              }`}
-            />
-          ))}
+        {/* Carousel Indicator Dots & Counter */}
+        <div className="flex items-center justify-between mt-6 px-1">
+          <div className="text-xs text-zinc-400 font-medium">
+            Project <span className="text-white font-bold">{activeIndex + 1}</span> of <span className="text-white font-bold">{projectsData.length}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            {projectsData.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => goToSlide(i)}
+                aria-label={`Go to project slide ${i + 1}`}
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  activeIndex === i ? "w-10 bg-[#EE7130]" : "w-2.5 bg-zinc-800 hover:bg-zinc-700"
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
       </div>
@@ -294,3 +334,4 @@ export default function Projects() {
     </section>
   );
 }
+
