@@ -44,22 +44,37 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Obifoks Global | Solar Energy, Lithium Storage & Security Infrastructure",
+    title: "Obifoks Global & Felicity Nig. Ltd. | Solar Energy & Storage Solutions",
     description:
-      "Powering Nigeria with reliable solar energy. Genuine Felicity solar panels, LiFePO4 batteries, inverters, and professional engineering in Owerri, Imo State.",
+      "Official distributor of genuine Felicity solar panels, LiFePO4 lithium batteries, hybrid inverters, and CCTV systems in Owerri, Imo State.",
     url: "https://obifoksglobal.com",
     siteName: "Obifoks Global & Felicity Nig. Ltd.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Obifoks Global & Felicity Nig. Ltd. - Solar Energy Solutions Owerri",
+        type: "image/png",
+      },
+    ],
     locale: "en_NG",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Obifoks Global | Solar Panels & Lithium Batteries in Owerri",
+    title: "Obifoks Global & Felicity Nig. Ltd. | Solar Panels & Lithium Storage",
     description:
-      "Shop genuine Felicity solar panels, LiFePO4 batteries, and hybrid inverters with direct factory warranty.",
+      "Official distributor of genuine Felicity solar equipment in Owerri, Imo State. Shop Tier-1 solar panels, LiFePO4 batteries, and hybrid inverters with warranty.",
+    images: ["/og-image.png"],
+    creator: "@obifoksglobal",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 

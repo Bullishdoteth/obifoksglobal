@@ -110,20 +110,20 @@ export default function Header() {
       return false; // Home is NOT highlighted when viewing other pages
     }
 
-    if (item.sectionId === "products" || item.href.startsWith("/products")) {
-      return pathname.startsWith("/products");
+    if (item.sectionId === "products" || item.href.startsWith("#products")) {
+      return pathname.startsWith("#products");
     }
 
-    if (item.sectionId === "projects" || item.href.startsWith("/projects")) {
-      return pathname.startsWith("/projects");
+    if (item.sectionId === "projects" || item.href.startsWith("#projects")) {
+      return pathname.startsWith("#projects");
     }
 
-    if (item.sectionId === "about-us" || item.href.startsWith("/about")) {
-      return pathname.startsWith("/about");
+    if (item.sectionId === "about-us" || item.href.startsWith("#about")) {
+      return pathname.startsWith("#about");
     }
 
-    if (item.sectionId === "contact" || item.href.startsWith("/contact")) {
-      return pathname.startsWith("/contact");
+    if (item.sectionId === "contact" || item.href.startsWith("#contact")) {
+      return pathname.startsWith("#contact");
     }
 
     return pathname === item.href;
